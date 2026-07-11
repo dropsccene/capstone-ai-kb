@@ -1,3 +1,4 @@
 capstone_kd.db
 chroma_db/
 venv/
+.env
