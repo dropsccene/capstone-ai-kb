@@ -1,15 +1,9 @@
-def greet(*args):
-    return f"Hello, {' '.join(args)}!"
+num = []
 
-settings = {"host":"db","port":5432}
-
-connect(*args, **kwargs):
-    host = kwargs.get("host", settings["host"])
-    port = kwargs.get("port", settings["port"])
+def add(items = []):
+    items.append("new item1")
+    return items
 
 
-router = APIRouter(prefix="/api",tags=["utils"])
-
-@router.get("/ping")
-def ping():
-    return {"pong":True}
+print(add(num))
+print(add(num))

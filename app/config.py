@@ -1,8 +1,11 @@
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 class Settings(BaseSettings):
     DATABASE_URL:str = "sqlite:///./capstone_kb.db"
-    LLM_API_KEY:str = ""
-    LLM_BASE_URL:str = "https://api.deepseek.com"
+    LLM_API_KEY:str = os.getenv("DEEPSEEK_API_KEY")
+    LLM_BASE_URL:str = os.getenv("BASE_URL")
 
 settings = Settings()
