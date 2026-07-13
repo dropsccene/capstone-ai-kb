@@ -6,7 +6,7 @@ from app.routers import documents,asks
 
 @asynccontextmanager
 async def lifespan(app:FastAPI):
-    Base.metadata.create_all(bind = engine)
+    
     yield
 
 app = FastAPI(lifespan = lifespan)

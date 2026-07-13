@@ -16,6 +16,7 @@ class Document(Base):
     kb_id = Column(Integer,ForeignKey("knowledge_bases.id"),nullable = False)
     uploaded_at = Column(DateTime,server_default = func.now())
     kb = relationship("KnowledgeBase",backref = "documents")
+    file_size = Column(Integer,nullable = True)
 
 class Chunk(Base):
     __tablename__ = "chunks"
