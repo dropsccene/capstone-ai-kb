@@ -206,6 +206,7 @@ MVP 默认 SQLite 是因为零配置——不需要装数据库、不需要启�
 ### Alembic 替代 create_all
 
 项目初期用 Base.metadata.create_all() 快速启动——lifespan 里一行建表，零配置。切 Alembic 后支持版本化迁移：每次改模型生成迁移文件，可回滚、可追溯、可团队协作。docker-entrypoint.sh 在容器启动时自动跑 alembic upgrade head，本地开发手动跑。选型逻辑：MVP 阶段 create_all 够快，上生产必须 Alembic——数据库 schema 变更没有版本控制就是定时炸弹。
+
 ---
 
 ## License
