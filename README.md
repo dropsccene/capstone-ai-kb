@@ -10,6 +10,7 @@
 [![tests](https://img.shields.io/badge/tests-13/13_passed-brightgreen)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)]()
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://capstone-ai-kb.onrender.com/docs)
+[![Blog](https://img.shields.io/badge/掘金-手写RAG管线的5个设计决策-blue)](https://juejin.cn/post/7665944296248442906)
 
 ---
 
