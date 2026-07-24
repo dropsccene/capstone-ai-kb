@@ -4,7 +4,7 @@ import os
 load_dotenv()
 
 class Settings(BaseSettings):
-    DATABASE_URL:str = os.getenv("DATABASE_URL")
+    DATABASE_URL:str = os.getenv("DATABASE_URL", "sqlite:///./capstone_kb.db")
     LLM_API_KEY:str = os.getenv("DEEPSEEK_API_KEY")
     LLM_BASE_URL:str = os.getenv("BASE_URL")
     SECRET_KEY:str = os.getenv("SECRET_KEY", "dev-secret-change-me")
