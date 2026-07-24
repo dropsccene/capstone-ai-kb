@@ -5,19 +5,10 @@ from app.vector_store import VectorStore
 from pydantic import BaseModel
 from app.llm import call_llm,call_llm_stream
 from fastapi.responses import StreamingResponse
-import redis
-import os
-from dotenv import load_dotenv
-load_dotenv()
-from app.rate_limit import check_rate_limit
+from app.rate_limit import check_rate_limit, get_redis
 
 
 router = APIRouter(prefix = "/knowledge-bases/{kb_id}",tags = ["asks"])
-r = redis.Redis(
-    host=os.getenv("REDIS_HOST","localhost"),
-    port = int(os.getenv("REDIS_PORT","6379")),
-    decode_responses = True
-)
 
 
 class AskRequest(BaseModel):
@@ -29,14 +20,17 @@ def ask_question(kb_id:int,body:AskRequest,request:Request,db:Session = Depends(
     if not check_rate_limit(request.client.host,max_req=5,window_sec=60):
         raise HTTPException(status_code=429,detail="访问次数过多，请稍后访问")
     cache_key = f"ask:{kb_id}:{body.question}"
-    cached = r.get(cache_key)
-    if cached:
-        return {"answer":cached,"sources":[]}
+    r = get_redis()
+    if r:
+        cached = r.get(cache_key)
+        if cached:
+            return {"answer":cached,"sources":[]}
     docs = VectorStore(f"kb_{kb_id}").query(body.question)
     context = "\n".join(docs)
     prompt = f"请根据下面资料回答问题，如果资料中没有相关信息，请回答“抱歉，我无法回答这个问题。”。\n\n资料:\n{context}\n\n问题:\n{body.question}\n\n回答:"
     answer = call_llm(prompt)
-    r.set(cache_key,answer,ex = 3600)
+    if r:
+        r.set(cache_key,answer,ex = 3600)
     return {"answer":answer,"sources":docs}
 
 

@@ -6,7 +6,7 @@ from app.schemas import UserCreate
 from app.auth import get_current_user
 import bcrypt
 from jose import jwt
-from datetime import datetime,timedelta
+from datetime import datetime,timedelta,timezone
 from app.config import settings
 from app.schemas import UserLogin,TokenResponse,UserResponse
 
@@ -31,7 +31,7 @@ def login(login_data:UserLogin,db:Session = Depends(get_db)):
     user = db.query(User).filter(User.username == login_data.username).first()
     if not user or not bcrypt.checkpw(login_data.password.encode("utf-8"),user.hashed_password.encode("utf-8")):
         raise HTTPException(status_code=401,detail="用户名或密码错误")
-    payload = {"sub":str(user.id),"exp":datetime.utcnow() + timedelta(hours = 24)}
+    payload = {"sub":str(user.id),"exp":datetime.now(timezone.utc) + timedelta(hours = 24)}
     token = jwt.encode(payload,settings.SECRET_KEY,algorithm="HS256")
     return TokenResponse(access_token = token)
 

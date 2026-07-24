@@ -7,7 +7,7 @@ import pytest
 from fastapi.testclient import TestClient
 from app.database import Base, get_db, engine, SessionLocal
 from app.main import app
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from app.config import settings
 
 @pytest.fixture(autouse=True)
@@ -22,6 +22,6 @@ def client():
 
 def create_test_token(user_id: int):
     from jose import jwt
-    payload = {'sub': str(user_id), 'exp': datetime.utcnow() + timedelta(hours=1)}
+    payload = {'sub': str(user_id), 'exp': datetime.now(timezone.utc) + timedelta(hours=1)}
     token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
     return token
