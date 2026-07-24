@@ -1,26 +1,42 @@
-# AI 知识库问答系统 — RAG + JWT + NL2SQL Agent
+# NL2SQL Agent + RAG 双引擎问答系统
 
-> 上传 PDF → 自然语言提问 → LLM 流式回答 + 引用来源。附带 JWT 认证体系和自然语言查数据库 Agent。
+> 🎯 一套系统，两个引擎。用户问"上个月销售额多少"→ Agent 生成 SQL 查数据库。用户问"退款流程是什么"→ RAG 检索文档生成回答。**手写 ReAct，不调 LangChain。**
+>
+> 📌 正在找 Python 后端 / AI 应用开发岗位，欢迎联系。邮箱见 GitHub profile。
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.139-green)](https://fastapi.tiangolo.com/)
 [![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek_V4-orange)](https://platform.deepseek.com/)
 [![tests](https://img.shields.io/badge/tests-13/13_passed-brightgreen)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)]()
+[![Live Demo](https://img.shields.io/badge/demo-coming_soon-lightgrey)]()
 
 ---
+
+## 为什么这个项目不一样
+
+> 大多数 RAG 项目 = LangChain 3 行调包 + 截图 + 没有测试。这个项目 ≠。
+
+| 别人 | 这个项目 |
+|------|---------|
+| LangChain 黑盒封装 | **手写 ReAct 循环**：tool_map → call_tool → run，每步可调试 |
+| 没有 Agent | **NL2SQL + RAG 双引擎**：自然语言查数据库 + 自然语言查文档 |
+| 没有认证 | **JWT + bcrypt + OAuth2PasswordBearer**，接口级鉴权 |
+| 没有测试 | **13 条 pytest 全绿**，Mock LLM + VectorStore，零网络零费用 |
+| 本地跑一下截个图 | **Docker Compose 一键部署**，PostgreSQL + FastAPI 双容器 + 自动迁移 |
+| 技术选型靠"教程说的" | **5 个设计决策文档**，每个写了为什么、什么时候换 |
 
 ## 特性
 
 | 模块 | 功能 |
 |------|------|
-| 文档上传 | PDF 上传 → 提取文本 → 切片 → SentenceTransformers 向量化 → ChromaDB 持久化，一步完成 |
-| 流式问答 | SSE 逐 token 实时推送（StreamingResponse），第一个字即刻出现 |
-| 引用来源 | 每个回答附带检索到的原文片段，可溯源验证 |
-| 知识库隔离 | 不同 PDF 存不同 ChromaDB collection（kb_1 / kb_2），互不干扰 |
-| JWT 认证 | bcrypt 密码哈希 + JWT 签发/验证 + OAuth2PasswordBearer，/me 鉴权 |
-| NL2SQL Agent | 自然语言查数据库——ReAct 循环 + Function Calling，自动生成 SQL → 执行 → 返回结果 |
-| Docker | docker compose up 一键启动 PostgreSQL 16 + FastAPI，自动 Alembic 迁移 |
+| 🧠 **NL2SQL Agent** | 自然语言查数据库——ReAct 循环 + Function Calling，自动生成 SQL → 执行 → 纠错 → 返回结果 |
+| 📄 **RAG 文档问答** | PDF 上传 → 切片 → SentenceTransformers 向量化 → ChromaDB 持久化 → 语义检索 → 流式生成 |
+| ⚡ **SSE 流式推送** | StreamingResponse 逐 token 实时返回，第一个字即刻出现 |
+| 📎 **引用来源** | 每个回答附带检索到的原文片段，可溯源验证 |
+| 🔐 **JWT 认证** | bcrypt 密码哈希 + JWT 签发/验证 + OAuth2PasswordBearer，/me 鉴权 |
+| 🗂️ **知识库隔离** | 不同 PDF 存不同 ChromaDB collection，互不干扰 |
+| 🐳 **Docker** | docker compose up 一键启动，自动 Alembic 迁移 |
 
 ---
 
@@ -107,15 +123,13 @@ docker compose up -d   # PostgreSQL 16 + FastAPI，自动 Alembic 迁移
 
 ## API 端点
 
-### 认证
+### 🧠 NL2SQL Agent（核心卖点）
 
-| 方法 | 路径 | 说明 | 认证 |
-|------|------|------|------|
-| POST | /api/auth/register | 注册（bcrypt 哈希密码） | 无 |
-| POST | /api/auth/login | 登录 → 返回 JWT token | 无 |
-| GET | /api/auth/me | 获取当前用户信息 | Bearer Token |
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| POST | /api/agent/ask-database | 自然语言 → SQL → 执行 → 返回结果（ReAct + Function Calling） |
 
-### 知识库
+### 📄 知识库 RAG
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
@@ -123,11 +137,13 @@ docker compose up -d   # PostgreSQL 16 + FastAPI，自动 Alembic 迁移
 | POST | /knowledge-bases/{kb_id}/ask | RAG 问答（非流式，返回 JSON） |
 | POST | /knowledge-bases/{kb_id}/ask-stream | RAG 问答（SSE 流式，逐字返回） |
 
-### NL2SQL Agent
+### 🔐 认证
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| POST | /api/agent/ask-database | 自然语言查数据库（ReAct + SQL 生成） |
+| 方法 | 路径 | 说明 | 认证 |
+|------|------|------|------|
+| POST | /api/auth/register | 注册（bcrypt 哈希密码） | 无 |
+| POST | /api/auth/login | 登录 → 返回 JWT token | 无 |
+| GET | /api/auth/me | 获取当前用户信息 | Bearer Token |
 
 ### 系统
 
