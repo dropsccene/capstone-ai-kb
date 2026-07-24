@@ -9,7 +9,7 @@
 [![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek_V4-orange)](https://platform.deepseek.com/)
 [![tests](https://img.shields.io/badge/tests-13/13_passed-brightgreen)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)]()
-[![Live Demo](https://img.shields.io/badge/demo-coming_soon-lightgrey)]()
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://capstone-ai-kb.onrender.com/docs)
 
 ---
 
@@ -115,6 +115,8 @@ docker compose up -d   # PostgreSQL 16 + FastAPI，自动 Alembic 迁移
 |--------|------|--------|
 | DEEPSEEK_API_KEY | DeepSeek API 密钥 | 无（必填） |
 | BASE_URL | LLM API 地址 | 无（必填） |
+| SILICONFLOW_API_KEY | 硅基流动 API 密钥（Embedding） | 无（必填） |
+| SILICONFLOW_BASE_URL | Embedding API 地址 | https://api.siliconflow.cn/v1 |
 | SECRET_KEY | JWT 签名密钥 | 无（必填，secrets.token_hex(32) 生成） |
 | DATABASE_URL | 数据库连接 | sqlite:///./capstone_kb.db |
 | ALEMBIC_AUTO_MIGRATE | Docker 启动自动迁移 | true |
@@ -180,7 +182,7 @@ Mock 策略：LLM 调用、VectorStore 全部 mock，0 网络请求、0 API 费�
 | 迁移 | Alembic | autogenerate + upgrade/downgrade |
 | 认证 | bcrypt + python-jose (JWT) | OAuth2PasswordBearer + HS256 |
 | 向量库 | ChromaDB（PersistentClient） | 按 kb_id 隔离 collection |
-| Embedding | SentenceTransformers | all-MiniLM-L6-v2，本地免联网 |
+| Embedding | 硅基流动 BGE-M3 API | 1024 维，多语言（中英），API 免本地模型 |
 | LLM | DeepSeek V4 Flash | openai SDK，同步 + 流式 SSE |
 | PDF | PyPDF2 3.0 | PdfReader(BytesIO(raw)) |
 | Agent | ReAct + Function Calling | 自然语言 → SQL → 执行 → 返回 |
@@ -195,9 +197,13 @@ Mock 策略：LLM 调用、VectorStore 全部 mock，0 网络请求、0 API 费�
 
 > 每个技术选型都有理由，面试能讲清楚为什么这么选。
 
-### 向量库选型：ChromaDB
+### Embedding 模型选型：BGE-M3 via 硅基流动 API
 
-我的项目中的向量库选用了 ChromaDB，因为 MVP 阶段要快——ChromaDB 嵌入式、零配置、Python 原生、支持持久化（PersistentClient），像 SQLite 一样即开即用。它的缺点也很明确：单机嵌入式，不支持分布式，扛不住大规模和高并发。如果后续上规模，可以换 Milvus（分布式自部署）或 pgvector（复用 PostgreSQL 运维，不用多维护一套向量库）。选型依据：团队是否已有 PostgreSQL → 有就用 pgvector，没有就上 Milvus。
+MVP 阶段用了 all-MiniLM-L6-v2 本地加载——好处是零 API 费用，坏处是需要 PyTorch（镜像体积 2GB+，运行时吃 400MB 内存），免费云服务（Render 512MB）根本扛不住。
+
+换硅基流动 BGE-M3 API 后：不装 PyTorch → Docker 镜像从 2GB 降到 300MB，内存从 512MB 降到 150MB。而且 BGE-M3 本身比 MiniLM 更强——1024 维、多语言（中英文都好）、支持长文本（8192 token）。API 调用延迟 ~200ms，跟本地加载差不多。
+
+什么时候换回本地：自建服务器有 GPU → 本地跑 BGE-M3 更快更省钱。什么时候换别的 API：硅基涨价或延迟不稳定 → 换 Cohere Embed / Jina AI。
 
 ### chunk_size 怎么定
 
