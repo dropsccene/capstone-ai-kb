@@ -24,14 +24,14 @@
 | 没有认证 | **JWT + bcrypt + OAuth2PasswordBearer**，接口级鉴权 |
 | 没有测试 | **13 条 pytest 全绿**，Mock LLM + VectorStore，零网络零费用 |
 | 本地跑一下截个图 | **Docker Compose 一键部署**，PostgreSQL + FastAPI 双容器 + 自动迁移 |
-| 技术选型靠"教程说的" | **5 个设计决策文档**，每个写了为什么、什么时候换 |
+| 技术选型靠"教程说的" | **8 个设计决策文档**，每个写了为什么、什么时候换 |
 
 ## 特性
 
 | 模块 | 功能 |
 |------|------|
 | 🧠 **NL2SQL Agent** | 自然语言查数据库——ReAct 循环 + Function Calling，自动生成 SQL → 执行 → 纠错 → 返回结果 |
-| 📄 **RAG 文档问答** | PDF 上传 → 切片 → SentenceTransformers 向量化 → ChromaDB 持久化 → 语义检索 → 流式生成 |
+| 📄 **RAG 文档问答** | PDF 上传 → 切片 → 硅基流动 BGE-M3 向量化 → ChromaDB 持久化 → 语义检索 → 流式生成 |
 | ⚡ **SSE 流式推送** | StreamingResponse 逐 token 实时返回，第一个字即刻出现 |
 | 📎 **引用来源** | 每个回答附带检索到的原文片段，可溯源验证 |
 | 🔐 **JWT 认证** | bcrypt 密码哈希 + JWT 签发/验证 + OAuth2PasswordBearer，/me 鉴权 |
@@ -53,7 +53,8 @@ capstone-ai-kb/
 │   ├── auth.py              # get_current_user（OAuth2 + jwt.decode + db query）
 │   ├── llm.py               # LLM 调用封装（call_llm + call_llm_stream）
 │   ├── agent.py             # ReActAgent 类（tool_map + call_tool + run 循环）
-│   ├── vector_store.py      # ChromaDB 向量存储 + SentenceTransformers Embedding
+│   ├── vector_store.py      # ChromaDB 向量存储 + 硅基流动 BGE-M3 Embedding API
+│   ├── rate_limit.py         # Redis 限流（滑动窗口），Redis 不可用时自动放行
 │   └── routers/
 │       ├── documents.py     # POST /upload（PDF→文本→切片→Embedding→入库）
 │       ├── asks.py          # POST /ask + /ask-stream（RAG 问答，非流式+SSE流式）
@@ -93,6 +94,7 @@ pip install -r requirements.txt
 # 创建 .env
 echo 'DEEPSEEK_API_KEY=sk-your-key' > .env
 echo 'BASE_URL=https://api.deepseek.com/v1' >> .env
+echo 'SILICONFLOW_API_KEY=sk-your-key' >> .env
 echo 'SECRET_KEY=your-secret-key' >> .env
 
 uvicorn app.main:app --reload
@@ -166,6 +168,7 @@ pytest -v   # 13 passed, 0 failed
 | test_auth.py | 7 | register / 重复注册 / 登录错密码 / 登录 / me / 未授权 |
 | test_upload.py | 3 | 上传 PDF / 非 PDF 422 / chunk 计数 |
 | test_agent.py | 2 | NL2SQL 查询 / 缺参数 422 |
+| test_rate_limit.py | — | 限流逻辑（滑动窗口） |
 | test_ask.py | 1 | RAG 问答（mock LLM + VectorStore） |
 
 Mock 策略：LLM 调用、VectorStore 全部 mock，0 网络请求、0 API 费用。
@@ -204,6 +207,14 @@ MVP 阶段用了 all-MiniLM-L6-v2 本地加载——好处是零 API 费用，�
 换硅基流动 BGE-M3 API 后：不装 PyTorch → Docker 镜像从 2GB 降到 300MB，内存从 512MB 降到 150MB。而且 BGE-M3 本身比 MiniLM 更强——1024 维、多语言（中英文都好）、支持长文本（8192 token）。API 调用延迟 ~200ms，跟本地加载差不多。
 
 什么时候换回本地：自建服务器有 GPU → 本地跑 BGE-M3 更快更省钱。什么时候换别的 API：硅基涨价或延迟不稳定 → 换 Cohere Embed / Jina AI。
+
+### 向量库选型：ChromaDB
+
+ChromaDB 选它的原因是 MVP 阶段要快——嵌入式、零配置、Python 原生、支持持久化（PersistentClient），像 SQLite 一样即开即用。它的缺点：单机嵌入式，不支持分布式，扛不住大规模高并发。上规模换 Milvus（分布式自部署）或 pgvector（复用 PostgreSQL 运维）。选型判断：团队已有 PostgreSQL → pgvector；从零开始 → ChromaDB 够快。
+
+### 为什么不用 LangChain Agent
+
+LangChain 的 Agent 封装了 ReAct 循环——调 `agent.run()` 就行了，确实省代码。但问题是**黑盒**：LLM 调用了哪个 tool？中间 SQL 对不对？报错了是哪一步挂的？看不出来。自己手写 ReAct 循环后，每一步都能打断点调试：LLM 返回的 tool_call → 解析 arguments → 执行 SQL → 错误 → 喂回 LLM 重试。控制权在自己手里。还有一个原因：面试官问"Agent 内部怎么工作的"，手写的人能讲清楚 while 循环 + tool_map + message 拼接，调包的人只能讲"LangChain 帮我做了"。
 
 ### chunk_size 怎么定
 
