@@ -27,7 +27,9 @@ def test_ask_cache_hit(mock_vectorstore, mock_call_llm, client):
     assert response.json()["sources"] == []
 
 
-def test_ask_rate_limited(client):
+@patch("app.routers.asks.VectorStore")
+def test_ask_rate_limited(mock_vectorstore, client):
+    mock_vectorstore.return_value.query = AsyncMock(return_value=["片段"])
     r.delete("rate:testclient")
     for _ in range(5):
         client.post("/knowledge-bases/1/ask", json={"question": "刷子测试"})
