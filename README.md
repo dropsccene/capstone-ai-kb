@@ -14,7 +14,16 @@
 
 ---
 
+## 🤖 线上 Demo 演示
+
+![RAG 流式问答 Demo](assets/demo_rag_stream.gif)
+
+> ▲ 免登录试用：https://capstone-ai-kb.onrender.com/docs → POST /knowledge-bases/2/ask-stream → Try it out
+
+---
+
 ## 为什么这个项目不一样
+
 
 > 大多数 RAG 项目 = LangChain 3 行调包 + 截图 + 没有测试。这个项目 ≠。
 

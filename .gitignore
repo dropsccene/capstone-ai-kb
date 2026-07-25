@@ -7,3 +7,4 @@ data/
 .pytest_cache/
 test.py
 chroma_db/
+tasks.py
