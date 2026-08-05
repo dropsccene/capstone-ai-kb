@@ -4,6 +4,7 @@ import json
 from app.database import SessionLocal
 from app.llm import client
 from sqlalchemy import text
+from sqlalchemy.exc import SQLAlchemyError
 
 
 def query_database(sql: str):
@@ -11,6 +12,11 @@ def query_database(sql: str):
     try:
         result = db.execute(text(sql)).fetchall()
         return str(result)
+    except SQLAlchemyError as e:
+        # 错误作为 observation 返回而不是抛异常——两个理由：
+        # 1) 不炸接口（语法错误现在会 500）
+        # 2) self-correction 的地基：LLM 下一轮能看到错误信息并修正 SQL
+        return f"SQL 执行出错: {e}"
     finally:
         db.close()
 
