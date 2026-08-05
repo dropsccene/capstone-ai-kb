@@ -28,7 +28,10 @@ def test_ask_cache_hit(mock_vectorstore, mock_call_llm, client):
 
 
 @patch("app.routers.asks.VectorStore")
-def test_ask_rate_limited(mock_vectorstore, client):
+def test_ask_rate_limited(mock_vectorstore, client, monkeypatch):
+    # 钉住限流值：asks.py 现在读 RATE_LIMIT_MAX_REQ（.env 里配的是 60），
+    # 测试要固定语义，不能跟着 .env 走
+    monkeypatch.setenv("RATE_LIMIT_MAX_REQ", "5")
     mock_vectorstore.return_value.query = AsyncMock(return_value=["片段"])
     r.delete("rate:testclient")
     for _ in range(5):

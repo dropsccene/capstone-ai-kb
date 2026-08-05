@@ -1,7 +1,9 @@
+import asyncio
+import json
+
 from app.database import SessionLocal
 from app.llm import client
 from sqlalchemy import text
-import json
 
 
 def query_database(sql: str):
@@ -59,7 +61,9 @@ class ReActAgent:
                 for tool_call in msg.tool_calls:
                     tc = tool_call
                     body = json.loads(tc.function.arguments)
-                    result = self.tool_map[tc.function.name](**body)
+                    # query_database 是同步 SQL，直接 await 会阻塞事件循环
+                    # （压测实测 ReAct P95 12s 的帮凶之一）——丢线程池执行
+                    result = await asyncio.to_thread(self.tool_map[tc.function.name], **body)
                     messages.append({"role": "tool", "tool_call_id": tc.id, "content": result})
                 continue
             return msg.content

@@ -1,3 +1,5 @@
+import os
+
 from fastapi import APIRouter, Depends, Request, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
@@ -17,7 +19,10 @@ class AskRequest(BaseModel):
 
 @router.post("/ask")
 async def ask_question(kb_id: int, body: AskRequest, request: Request, db: Session = Depends(get_db)):
-    if not check_rate_limit(request.client.host, max_req=5, window_sec=60):
+    # 读 RATE_LIMIT_MAX_REQ（.env 已配 60），未配置时兜底 5 次/分钟/IP；
+    # 之前硬编码 5 会把 .env 的配置压住，压测/运维都没法调
+    max_req = int(os.getenv("RATE_LIMIT_MAX_REQ", "5"))
+    if not check_rate_limit(request.client.host, max_req=max_req, window_sec=60):
         raise HTTPException(status_code=429, detail="访问次数过多，请稍后访问")
     cache_key = f"ask:{kb_id}:{body.question}"
     r = get_redis()
