@@ -30,7 +30,7 @@ async def ask_question(kb_id: int, body: AskRequest, request: Request, db: Sessi
         cached = r.get(cache_key)
         if cached:
             return {"answer": cached, "sources": []}
-    docs = await VectorStore(f"kb_{kb_id}").query(body.question)
+    docs = await VectorStore(f"kb_{kb_id}").hybrid_query(body.question)
     context = "\n".join(docs)
     prompt = f"请根据下面资料回答问题，如果资料中没有相关信息，请回答“抱歉，我无法回答这个问题。”。\n\n资料:\n{context}\n\n问题:\n{body.question}\n\n回答:"
     answer = await call_llm(prompt)
