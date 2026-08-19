@@ -1,0 +1,371 @@
+[
+  {
+    "id": 1,
+    "question": "这个App支持哪些手势类型？",
+    "relevant": [
+      "chunk_1_18"
+    ],
+    "vector_R@3": 0.0,
+    "vector_retrieved@3": [
+      "chunk_1_19",
+      "chunk_1_16",
+      "chunk_1_17"
+    ],
+    "vector_R@5": 1.0,
+    "vector_retrieved@5": [
+      "chunk_1_19",
+      "chunk_1_16",
+      "chunk_1_17",
+      "chunk_1_18",
+      "chunk_1_50"
+    ],
+    "vector_R@10": 1.0,
+    "vector_retrieved@10": [
+      "chunk_1_19",
+      "chunk_1_16",
+      "chunk_1_17",
+      "chunk_1_18",
+      "chunk_1_50",
+      "chunk_1_30",
+      "chunk_1_92",
+      "chunk_1_21",
+      "chunk_1_43",
+      "chunk_1_62"
+    ],
+    "hybrid_R@3": 0.0,
+    "hybrid_retrieved@3": [
+      "chunk_1_30",
+      "chunk_1_50",
+      "chunk_1_80"
+    ],
+    "hybrid_R@5": 0.0,
+    "hybrid_retrieved@5": [
+      "chunk_1_30",
+      "chunk_1_50",
+      "chunk_1_80",
+      "chunk_1_19",
+      "chunk_1_16"
+    ],
+    "hybrid_R@10": 1.0,
+    "hybrid_retrieved@10": [
+      "chunk_1_30",
+      "chunk_1_50",
+      "chunk_1_80",
+      "chunk_1_19",
+      "chunk_1_16",
+      "chunk_1_17",
+      "chunk_1_29",
+      "chunk_1_86",
+      "chunk_1_18",
+      "chunk_1_90"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "音乐控制模块怎么实现的？",
+    "relevant": [
+      "chunk_1_60",
+      "chunk_1_20"
+    ],
+    "vector_R@3": 0.5,
+    "vector_retrieved@3": [
+      "chunk_1_59",
+      "chunk_1_60",
+      "chunk_1_31"
+    ],
+    "vector_R@5": 0.5,
+    "vector_retrieved@5": [
+      "chunk_1_59",
+      "chunk_1_60",
+      "chunk_1_31",
+      "chunk_1_61",
+      "chunk_1_62"
+    ],
+    "vector_R@10": 1.0,
+    "vector_retrieved@10": [
+      "chunk_1_59",
+      "chunk_1_60",
+      "chunk_1_31",
+      "chunk_1_61",
+      "chunk_1_62",
+      "chunk_1_20",
+      "chunk_1_19",
+      "chunk_1_44",
+      "chunk_1_12",
+      "chunk_1_11"
+    ],
+    "hybrid_R@3": 0.0,
+    "hybrid_retrieved@3": [
+      "chunk_1_31",
+      "chunk_1_59",
+      "chunk_1_19"
+    ],
+    "hybrid_R@5": 0.5,
+    "hybrid_retrieved@5": [
+      "chunk_1_31",
+      "chunk_1_59",
+      "chunk_1_19",
+      "chunk_1_61",
+      "chunk_1_20"
+    ],
+    "hybrid_R@10": 1.0,
+    "hybrid_retrieved@10": [
+      "chunk_1_31",
+      "chunk_1_59",
+      "chunk_1_19",
+      "chunk_1_61",
+      "chunk_1_20",
+      "chunk_1_62",
+      "chunk_1_44",
+      "chunk_1_60",
+      "chunk_1_81",
+      "chunk_1_12"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "数据库用的什么技术？",
+    "relevant": [
+      "chunk_1_40"
+    ],
+    "vector_R@3": 1.0,
+    "vector_retrieved@3": [
+      "chunk_1_40",
+      "chunk_1_45",
+      "chunk_1_46"
+    ],
+    "vector_R@5": 1.0,
+    "vector_retrieved@5": [
+      "chunk_1_40",
+      "chunk_1_45",
+      "chunk_1_46",
+      "chunk_1_90",
+      "chunk_1_10"
+    ],
+    "vector_R@10": 1.0,
+    "vector_retrieved@10": [
+      "chunk_1_40",
+      "chunk_1_45",
+      "chunk_1_46",
+      "chunk_1_90",
+      "chunk_1_10",
+      "chunk_1_34",
+      "chunk_1_91",
+      "chunk_1_76",
+      "chunk_1_75",
+      "chunk_1_44"
+    ],
+    "hybrid_R@3": 0.0,
+    "hybrid_retrieved@3": [
+      "chunk_1_91",
+      "chunk_1_44",
+      "chunk_1_80"
+    ],
+    "hybrid_R@5": 1.0,
+    "hybrid_retrieved@5": [
+      "chunk_1_91",
+      "chunk_1_44",
+      "chunk_1_80",
+      "chunk_1_40",
+      "chunk_1_83"
+    ],
+    "hybrid_R@10": 1.0,
+    "hybrid_retrieved@10": [
+      "chunk_1_91",
+      "chunk_1_44",
+      "chunk_1_80",
+      "chunk_1_40",
+      "chunk_1_83",
+      "chunk_1_45",
+      "chunk_1_20",
+      "chunk_1_46",
+      "chunk_1_87",
+      "chunk_1_90"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "图片画廊模块有什么功能？",
+    "relevant": [
+      "chunk_1_70",
+      "chunk_1_20"
+    ],
+    "vector_R@3": 0.0,
+    "vector_retrieved@3": [
+      "chunk_1_65",
+      "chunk_1_12",
+      "chunk_1_45"
+    ],
+    "vector_R@5": 0.5,
+    "vector_retrieved@5": [
+      "chunk_1_65",
+      "chunk_1_12",
+      "chunk_1_45",
+      "chunk_1_78",
+      "chunk_1_20"
+    ],
+    "vector_R@10": 0.5,
+    "vector_retrieved@10": [
+      "chunk_1_65",
+      "chunk_1_12",
+      "chunk_1_45",
+      "chunk_1_78",
+      "chunk_1_20",
+      "chunk_1_31",
+      "chunk_1_68",
+      "chunk_1_84",
+      "chunk_1_88",
+      "chunk_1_38"
+    ],
+    "hybrid_R@3": 0.5,
+    "hybrid_retrieved@3": [
+      "chunk_1_20",
+      "chunk_1_78",
+      "chunk_1_65"
+    ],
+    "hybrid_R@5": 0.5,
+    "hybrid_retrieved@5": [
+      "chunk_1_20",
+      "chunk_1_78",
+      "chunk_1_65",
+      "chunk_1_31",
+      "chunk_1_68"
+    ],
+    "hybrid_R@10": 0.5,
+    "hybrid_retrieved@10": [
+      "chunk_1_20",
+      "chunk_1_78",
+      "chunk_1_65",
+      "chunk_1_31",
+      "chunk_1_68",
+      "chunk_1_84",
+      "chunk_1_32",
+      "chunk_1_12",
+      "chunk_1_45",
+      "chunk_1_81"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "性能要求是什么？",
+    "relevant": [
+      "chunk_1_30"
+    ],
+    "vector_R@3": 1.0,
+    "vector_retrieved@3": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90"
+    ],
+    "vector_R@5": 1.0,
+    "vector_retrieved@5": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90",
+      "chunk_1_79",
+      "chunk_1_77"
+    ],
+    "vector_R@10": 1.0,
+    "vector_retrieved@10": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90",
+      "chunk_1_79",
+      "chunk_1_77",
+      "chunk_1_7",
+      "chunk_1_89",
+      "chunk_1_28",
+      "chunk_1_51",
+      "chunk_1_86"
+    ],
+    "hybrid_R@3": 1.0,
+    "hybrid_retrieved@3": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90"
+    ],
+    "hybrid_R@5": 1.0,
+    "hybrid_retrieved@5": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90",
+      "chunk_1_89",
+      "chunk_1_86"
+    ],
+    "hybrid_R@10": 1.0,
+    "hybrid_retrieved@10": [
+      "chunk_1_30",
+      "chunk_1_29",
+      "chunk_1_90",
+      "chunk_1_89",
+      "chunk_1_86",
+      "chunk_1_77",
+      "chunk_1_87",
+      "chunk_1_79",
+      "chunk_1_88",
+      "chunk_1_7"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "手势记录怎么存储的？",
+    "relevant": [
+      "chunk_1_40",
+      "chunk_1_20"
+    ],
+    "vector_R@3": 0.0,
+    "vector_retrieved@3": [
+      "chunk_1_72",
+      "chunk_1_44",
+      "chunk_1_45"
+    ],
+    "vector_R@5": 0.0,
+    "vector_retrieved@5": [
+      "chunk_1_72",
+      "chunk_1_44",
+      "chunk_1_45",
+      "chunk_1_73",
+      "chunk_1_31"
+    ],
+    "vector_R@10": 0.5,
+    "vector_retrieved@10": [
+      "chunk_1_72",
+      "chunk_1_44",
+      "chunk_1_45",
+      "chunk_1_73",
+      "chunk_1_31",
+      "chunk_1_74",
+      "chunk_1_20",
+      "chunk_1_37",
+      "chunk_1_32",
+      "chunk_1_33"
+    ],
+    "hybrid_R@3": 0.5,
+    "hybrid_retrieved@3": [
+      "chunk_1_20",
+      "chunk_1_45",
+      "chunk_1_44"
+    ],
+    "hybrid_R@5": 0.5,
+    "hybrid_retrieved@5": [
+      "chunk_1_20",
+      "chunk_1_45",
+      "chunk_1_44",
+      "chunk_1_74",
+      "chunk_1_31"
+    ],
+    "hybrid_R@10": 0.5,
+    "hybrid_retrieved@10": [
+      "chunk_1_20",
+      "chunk_1_45",
+      "chunk_1_44",
+      "chunk_1_74",
+      "chunk_1_31",
+      "chunk_1_32",
+      "chunk_1_72",
+      "chunk_1_84",
+      "chunk_1_30",
+      "chunk_1_73"
+    ]
+  }
+]

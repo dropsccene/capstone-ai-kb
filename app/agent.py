@@ -3,6 +3,7 @@ import json
 
 from app.database import SessionLocal
 from app.llm import client
+from app.model_router import Task, route
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -57,7 +58,7 @@ class ReActAgent:
         messages.append({"role": "user", "content": user_query})
         for _ in range(max_rounds):
             response = await self.client.chat.completions.create(
-                model="deepseek-v4-flash",
+                model=route(Task.REASONING),
                 messages=messages,
                 tools=self.tools
             )

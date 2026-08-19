@@ -1,0 +1,35 @@
+{
+  "description": "Ground truth for Recall@K evaluation",
+  "test_cases": [
+    {
+      "id": 1,
+      "question": "这个App支持哪些手势类型？",
+      "relevant_chunks": ["chunk_1_18"]
+    },
+    {
+      "id": 2,
+      "question": "音乐控制模块怎么实现的？",
+      "relevant_chunks": ["chunk_1_20", "chunk_1_60"]
+    },
+    {
+      "id": 3,
+      "question": "数据库用的什么技术？",
+      "relevant_chunks": ["chunk_1_40"]
+    },
+    {
+      "id": 4,
+      "question": "图片画廊模块有什么功能？",
+      "relevant_chunks": ["chunk_1_20", "chunk_1_70"]
+    },
+    {
+      "id": 5,
+      "question": "性能要求是什么？",
+      "relevant_chunks": ["chunk_1_30"]
+    },
+    {
+      "id": 6,
+      "question": "手势记录怎么存储的？",
+      "relevant_chunks": ["chunk_1_20", "chunk_1_40"]
+    }
+  ]
+}

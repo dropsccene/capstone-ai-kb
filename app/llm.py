@@ -1,12 +1,13 @@
 from openai import AsyncOpenAI
 from app.config import settings
+from app.model_router import Task, route
 
 client = AsyncOpenAI(api_key=settings.LLM_API_KEY, base_url=settings.LLM_BASE_URL)
 
 
-async def call_llm(prompt: str) -> str:
+async def call_llm(prompt: str, task: Task = Task.REASONING) -> str:
     response = await client.chat.completions.create(
-        model="deepseek-v4-flash",
+        model=route(task),
         messages=[
             {"role": "user", "content": prompt}
         ]
@@ -14,9 +15,9 @@ async def call_llm(prompt: str) -> str:
     return response.choices[0].message.content
 
 
-async def call_llm_stream(prompt: str):
+async def call_llm_stream(prompt: str, task: Task = Task.REASONING):
     stream = await client.chat.completions.create(
-        model="deepseek-v4-flash",
+        model=route(task),
         messages=[{
             "role": "user",
             "content": prompt
