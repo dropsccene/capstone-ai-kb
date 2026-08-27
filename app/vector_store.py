@@ -82,9 +82,29 @@ class VectorStore():
         # 并集里每个 id，两路的项相加（缺哪路 .get 补 0）
         total = {k:bm25_item.get(k,0)+vector_item.get(k,0) for k in set(bm25_item)|set(vector_item)}
         # 按总分排序，取前 top_k
-        top = sorted(total.items(),key=lambda kv:kv[1],reverse=True)[:top_k]
+        top = sorted(total.items(),key=lambda kv:kv[1],reverse=True)
         # 返回 top_k 的原文
-        return [id_to_text[k] for k,v in top]
-        
+        import requests
+        candidates = [id_to_text[cid] for cid, _ in top[:10]]
+        result = requests.post(
+            "https://api.siliconflow.cn/v1/rerank",
+            headers={"Authorization" : f"Bearer {os.environ.get('SILICONFLOW_API_KEY')}"},
+            json={
+                "model": "BAAI/bge-reranker-v2-m3",
+                "query": query_text,
+                "documents": candidates
+            },timeout=30
+        ).json()
+        relevance_score = sorted(result["results"], key=lambda x: x["relevance_score"], reverse=True)[:top_k]
+        print("RERANK 排序结果:", relevance_score)
+        return [candidates[doc["index"]] for doc in relevance_score]
 
-        
+    
+if __name__ == "__main__":
+    import asyncio
+    q = VectorStore("kb_1")   # 用你类真实名字和参数
+    asyncio.run(q.hybrid_query("这篇毕业设计的核心创新点是什么?", top_k=3))
+
+
+
+
