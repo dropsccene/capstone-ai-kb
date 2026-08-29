@@ -1,0 +1,1632 @@
+[
+  {
+    "id": 2,
+    "question": "Python 中字符串有哪些字面量写法？",
+    "relevant": [
+      "chunk_13_2023",
+      "chunk_13_123",
+      "chunk_13_1995"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_123",
+      "chunk_13_24",
+      "chunk_13_2023",
+      "chunk_12_1095",
+      "chunk_13_1711",
+      "chunk_13_1995",
+      "chunk_12_116",
+      "chunk_13_1659",
+      "chunk_13_122",
+      "chunk_12_932"
+    ],
+    "reranked": [
+      "chunk_13_1995",
+      "chunk_12_116",
+      "chunk_13_2023",
+      "chunk_13_24",
+      "chunk_12_932",
+      "chunk_13_122",
+      "chunk_13_1659",
+      "chunk_13_123",
+      "chunk_13_1711",
+      "chunk_12_1095"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 3,
+    "question": "f-string 格式化字符串怎么用？",
+    "relevant": [
+      "chunk_13_1485",
+      "chunk_13_1482",
+      "chunk_13_128"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_88",
+      "chunk_13_128",
+      "chunk_12_1246",
+      "chunk_13_1482",
+      "chunk_13_1487",
+      "chunk_13_1485",
+      "chunk_12_431",
+      "chunk_13_344",
+      "chunk_13_1484",
+      "chunk_13_1106"
+    ],
+    "reranked": [
+      "chunk_13_128",
+      "chunk_13_1487",
+      "chunk_13_1484",
+      "chunk_13_1485",
+      "chunk_13_344",
+      "chunk_12_431",
+      "chunk_13_1482",
+      "chunk_13_1106",
+      "chunk_12_88",
+      "chunk_12_1246"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 4,
+    "question": "赋值语句和表达式求值顺序？",
+    "relevant": [
+      "chunk_13_1063",
+      "chunk_13_1071",
+      "chunk_13_866"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_1071",
+      "chunk_13_866",
+      "chunk_12_1",
+      "chunk_13_1063",
+      "chunk_12_2",
+      "chunk_12_3",
+      "chunk_12_185",
+      "chunk_12_4",
+      "chunk_13_871"
+    ],
+    "reranked": [
+      "chunk_13_1071",
+      "chunk_13_1063",
+      "chunk_12_185",
+      "chunk_13_871",
+      "chunk_12_2",
+      "chunk_12_4",
+      "chunk_12_3",
+      "chunk_13_866",
+      "chunk_12_1",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 5,
+    "question": "if / elif / else 的语法结构？",
+    "relevant": [
+      "chunk_13_1971",
+      "chunk_13_1209",
+      "chunk_13_1448"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_119",
+      "chunk_12_1199",
+      "chunk_13_1814",
+      "chunk_12_138",
+      "chunk_13_1816",
+      "chunk_13_1971",
+      "chunk_13_1212",
+      "chunk_12_1198",
+      "chunk_12_705",
+      "chunk_12_139"
+    ],
+    "reranked": [
+      "chunk_12_1199",
+      "chunk_13_1971",
+      "chunk_12_138",
+      "chunk_12_139",
+      "chunk_13_1816",
+      "chunk_12_119",
+      "chunk_12_1198",
+      "chunk_12_705",
+      "chunk_13_1814",
+      "chunk_13_1212"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 0.333,
+    "rerank_R@10": 0.333
+  },
+  {
+    "id": 6,
+    "question": "for 循环如何遍历字典？",
+    "relevant": [
+      "chunk_12_311"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1166",
+      "chunk_12_121",
+      "chunk_12_673",
+      "chunk_13_1167",
+      "chunk_12_1209",
+      "chunk_13_1213",
+      "chunk_12_389",
+      "chunk_12_941",
+      "chunk_12_238",
+      "chunk_12_275"
+    ],
+    "reranked": [
+      "chunk_13_1167",
+      "chunk_12_1209",
+      "chunk_12_389",
+      "chunk_13_1213",
+      "chunk_12_121",
+      "chunk_12_238",
+      "chunk_13_1166",
+      "chunk_12_673",
+      "chunk_12_275",
+      "chunk_12_941"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 7,
+    "question": "range 函数的三个参数含义？",
+    "relevant": [
+      "chunk_13_855",
+      "chunk_12_125",
+      "chunk_12_224"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_224",
+      "chunk_13_1584",
+      "chunk_12_125",
+      "chunk_12_10",
+      "chunk_13_855",
+      "chunk_13_1108",
+      "chunk_13_1586",
+      "chunk_12_479",
+      "chunk_12_129",
+      "chunk_13_889"
+    ],
+    "reranked": [
+      "chunk_12_479",
+      "chunk_13_1586",
+      "chunk_12_10",
+      "chunk_13_1108",
+      "chunk_12_129",
+      "chunk_13_1584",
+      "chunk_12_125",
+      "chunk_12_224",
+      "chunk_13_855",
+      "chunk_13_889"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 8,
+    "question": "break 和 continue 的区别？",
+    "relevant": [
+      "chunk_12_133",
+      "chunk_12_134",
+      "chunk_12_135"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_251",
+      "chunk_13_1154",
+      "chunk_13_1330",
+      "chunk_13_1212",
+      "chunk_13_1153",
+      "chunk_13_207",
+      "chunk_13_1155",
+      "chunk_12_889",
+      "chunk_13_1152",
+      "chunk_12_890"
+    ],
+    "reranked": [
+      "chunk_13_1155",
+      "chunk_13_1153",
+      "chunk_13_1330",
+      "chunk_13_1152",
+      "chunk_13_207",
+      "chunk_13_1154",
+      "chunk_12_890",
+      "chunk_12_889",
+      "chunk_13_251",
+      "chunk_13_1212"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 10,
+    "question": "函数定义时如何设置默认参数？",
+    "relevant": [
+      "chunk_13_1339",
+      "chunk_13_1388",
+      "chunk_13_1338"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_1338",
+      "chunk_13_1339",
+      "chunk_12_1",
+      "chunk_13_1388",
+      "chunk_12_2",
+      "chunk_13_1387",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_1337"
+    ],
+    "reranked": [
+      "chunk_13_1387",
+      "chunk_12_0",
+      "chunk_13_1388",
+      "chunk_13_1339",
+      "chunk_13_1338",
+      "chunk_12_3",
+      "chunk_13_1337",
+      "chunk_12_2",
+      "chunk_12_4",
+      "chunk_12_1"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 1.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 11,
+    "question": "*args 和 **kwargs 是什么？",
+    "relevant": [
+      "chunk_12_1037",
+      "chunk_12_1038",
+      "chunk_13_1490"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1490",
+      "chunk_12_1200",
+      "chunk_13_1653",
+      "chunk_13_1817",
+      "chunk_12_507",
+      "chunk_13_1816",
+      "chunk_13_1820",
+      "chunk_12_1038",
+      "chunk_12_857",
+      "chunk_12_506"
+    ],
+    "reranked": [
+      "chunk_13_1817",
+      "chunk_13_1653",
+      "chunk_13_1490",
+      "chunk_12_1038",
+      "chunk_13_1816",
+      "chunk_12_507",
+      "chunk_12_857",
+      "chunk_13_1820",
+      "chunk_12_506",
+      "chunk_12_1200"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.333,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 13,
+    "question": "字典推导式怎么写？",
+    "relevant": [
+      "chunk_12_308",
+      "chunk_12_941",
+      "chunk_12_309"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_309",
+      "chunk_12_308",
+      "chunk_12_1",
+      "chunk_12_941",
+      "chunk_12_2",
+      "chunk_12_301",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_866"
+    ],
+    "reranked": [
+      "chunk_12_308",
+      "chunk_12_309",
+      "chunk_12_941",
+      "chunk_12_301",
+      "chunk_12_3",
+      "chunk_13_866",
+      "chunk_12_4",
+      "chunk_12_2",
+      "chunk_12_1",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 1.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 1.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 14,
+    "question": "元组和列表有什么区别？",
+    "relevant": [
+      "chunk_12_290",
+      "chunk_12_763",
+      "chunk_13_535"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_535",
+      "chunk_12_1",
+      "chunk_12_290",
+      "chunk_12_763",
+      "chunk_12_2",
+      "chunk_12_762",
+      "chunk_12_3",
+      "chunk_13_226",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_12_1",
+      "chunk_12_4",
+      "chunk_12_0",
+      "chunk_12_3",
+      "chunk_12_290",
+      "chunk_12_2",
+      "chunk_12_763",
+      "chunk_12_762",
+      "chunk_13_535",
+      "chunk_13_226"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 15,
+    "question": "集合有哪些常用操作？",
+    "relevant": [
+      "chunk_12_296",
+      "chunk_12_295"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_971",
+      "chunk_12_1",
+      "chunk_13_231",
+      "chunk_13_539",
+      "chunk_12_2",
+      "chunk_12_186",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_1586"
+    ],
+    "reranked": [
+      "chunk_13_1586",
+      "chunk_13_539",
+      "chunk_12_186",
+      "chunk_13_231",
+      "chunk_12_4",
+      "chunk_12_971",
+      "chunk_12_3",
+      "chunk_12_2",
+      "chunk_12_1",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 18,
+    "question": "包和相对导入怎么用？",
+    "relevant": [
+      "chunk_12_414",
+      "chunk_13_1171",
+      "chunk_12_412"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_412",
+      "chunk_12_1",
+      "chunk_13_1171",
+      "chunk_12_414",
+      "chunk_12_2",
+      "chunk_13_811",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_409"
+    ],
+    "reranked": [
+      "chunk_12_0",
+      "chunk_12_2",
+      "chunk_12_4",
+      "chunk_12_3",
+      "chunk_12_414",
+      "chunk_13_409",
+      "chunk_12_412",
+      "chunk_12_1",
+      "chunk_13_811",
+      "chunk_13_1171"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 19,
+    "question": "字符串有哪些格式化方法？",
+    "relevant": [
+      "chunk_12_438",
+      "chunk_12_446",
+      "chunk_12_1073"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_1073",
+      "chunk_12_438",
+      "chunk_12_1",
+      "chunk_12_446",
+      "chunk_12_2",
+      "chunk_13_140",
+      "chunk_12_3",
+      "chunk_13_2017",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_13_2017",
+      "chunk_13_140",
+      "chunk_12_1073",
+      "chunk_12_4",
+      "chunk_12_446",
+      "chunk_12_3",
+      "chunk_12_438",
+      "chunk_12_2",
+      "chunk_12_1",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 20,
+    "question": "如何读写文本文件？",
+    "relevant": [
+      "chunk_12_482",
+      "chunk_12_468",
+      "chunk_12_456"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_456",
+      "chunk_12_1",
+      "chunk_12_468",
+      "chunk_12_482",
+      "chunk_12_2",
+      "chunk_12_3",
+      "chunk_12_457",
+      "chunk_12_4",
+      "chunk_12_1073"
+    ],
+    "reranked": [
+      "chunk_12_468",
+      "chunk_12_1073",
+      "chunk_12_457",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_12_1",
+      "chunk_12_2",
+      "chunk_12_482",
+      "chunk_12_456",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 21,
+    "question": "json 模块怎么用？",
+    "relevant": [
+      "chunk_12_481",
+      "chunk_12_482",
+      "chunk_12_480"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_482",
+      "chunk_12_484",
+      "chunk_13_373",
+      "chunk_12_178",
+      "chunk_12_478",
+      "chunk_12_483",
+      "chunk_13_527",
+      "chunk_13_184",
+      "chunk_12_480",
+      "chunk_12_912"
+    ],
+    "reranked": [
+      "chunk_12_912",
+      "chunk_12_483",
+      "chunk_12_178",
+      "chunk_12_484",
+      "chunk_13_184",
+      "chunk_12_478",
+      "chunk_13_373",
+      "chunk_13_527",
+      "chunk_12_482",
+      "chunk_12_480"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.333,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 22,
+    "question": "pickle 和 json 有什么区别？",
+    "relevant": [
+      "chunk_12_484",
+      "chunk_12_1304",
+      "chunk_12_485"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_482",
+      "chunk_12_484",
+      "chunk_13_326",
+      "chunk_13_455",
+      "chunk_12_485",
+      "chunk_13_373",
+      "chunk_12_478",
+      "chunk_13_1657",
+      "chunk_12_476",
+      "chunk_12_1042"
+    ],
+    "reranked": [
+      "chunk_12_476",
+      "chunk_12_484",
+      "chunk_12_478",
+      "chunk_12_485",
+      "chunk_13_1657",
+      "chunk_12_1042",
+      "chunk_13_455",
+      "chunk_12_482",
+      "chunk_13_373",
+      "chunk_13_326"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 24,
+    "question": "如何自定义异常类？",
+    "relevant": [
+      "chunk_13_604",
+      "chunk_13_1141",
+      "chunk_12_527"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_527",
+      "chunk_12_1",
+      "chunk_13_1141",
+      "chunk_13_604",
+      "chunk_12_2",
+      "chunk_13_483",
+      "chunk_12_3",
+      "chunk_13_445",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_12_0",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_12_2",
+      "chunk_12_1",
+      "chunk_12_527",
+      "chunk_13_483",
+      "chunk_13_445",
+      "chunk_13_604",
+      "chunk_13_1141"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 25,
+    "question": "raise 语句的用法？",
+    "relevant": [
+      "chunk_13_1139",
+      "chunk_13_1138",
+      "chunk_13_1434"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1139",
+      "chunk_13_1138",
+      "chunk_12_685",
+      "chunk_13_1434",
+      "chunk_13_128",
+      "chunk_13_1089",
+      "chunk_12_516",
+      "chunk_13_967",
+      "chunk_13_1221",
+      "chunk_13_683"
+    ],
+    "reranked": [
+      "chunk_13_1221",
+      "chunk_12_685",
+      "chunk_13_1138",
+      "chunk_13_683",
+      "chunk_13_1139",
+      "chunk_13_967",
+      "chunk_13_1089",
+      "chunk_13_1434",
+      "chunk_12_516",
+      "chunk_13_128"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 26,
+    "question": "finally 子句的作用？",
+    "relevant": [
+      "chunk_13_1246",
+      "chunk_12_531",
+      "chunk_12_539"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1246",
+      "chunk_13_1650",
+      "chunk_12_539",
+      "chunk_12_531",
+      "chunk_12_169",
+      "chunk_12_1035",
+      "chunk_13_1245",
+      "chunk_12_535",
+      "chunk_13_190",
+      "chunk_13_921"
+    ],
+    "reranked": [
+      "chunk_13_1650",
+      "chunk_12_169",
+      "chunk_13_190",
+      "chunk_12_539",
+      "chunk_13_1245",
+      "chunk_12_1035",
+      "chunk_13_1246",
+      "chunk_12_535",
+      "chunk_13_921",
+      "chunk_12_531"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 27,
+    "question": "如何定义类？类对象和实例对象的关系？",
+    "relevant": [
+      "chunk_13_504",
+      "chunk_12_623",
+      "chunk_13_320"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_504",
+      "chunk_12_1",
+      "chunk_12_623",
+      "chunk_13_320",
+      "chunk_12_2",
+      "chunk_13_461",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_325"
+    ],
+    "reranked": [
+      "chunk_13_461",
+      "chunk_12_623",
+      "chunk_13_320",
+      "chunk_12_3",
+      "chunk_12_2",
+      "chunk_13_325",
+      "chunk_12_4",
+      "chunk_12_1",
+      "chunk_13_504",
+      "chunk_12_0"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 28,
+    "question": "Python 继承和多重继承怎么用？",
+    "relevant": [
+      "chunk_12_887",
+      "chunk_12_658",
+      "chunk_12_653"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_653",
+      "chunk_13_24",
+      "chunk_12_658",
+      "chunk_12_1095",
+      "chunk_13_1711",
+      "chunk_13_1502",
+      "chunk_13_1659",
+      "chunk_12_100",
+      "chunk_12_123",
+      "chunk_12_932"
+    ],
+    "reranked": [
+      "chunk_12_653",
+      "chunk_12_658",
+      "chunk_13_1659",
+      "chunk_12_932",
+      "chunk_13_1711",
+      "chunk_12_1095",
+      "chunk_13_1502",
+      "chunk_12_123",
+      "chunk_12_100",
+      "chunk_13_24"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 29,
+    "question": "私有变量和名称改写机制？",
+    "relevant": [
+      "chunk_12_664",
+      "chunk_12_667",
+      "chunk_12_660"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_664",
+      "chunk_12_1",
+      "chunk_12_660",
+      "chunk_12_667",
+      "chunk_12_2",
+      "chunk_13_430",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_1347"
+    ],
+    "reranked": [
+      "chunk_12_664",
+      "chunk_12_660",
+      "chunk_12_667",
+      "chunk_13_1347",
+      "chunk_13_430",
+      "chunk_12_4",
+      "chunk_12_2",
+      "chunk_12_3",
+      "chunk_12_0",
+      "chunk_12_1"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 1.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 1.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 30,
+    "question": "迭代器协议是什么？",
+    "relevant": [
+      "chunk_12_678",
+      "chunk_12_677",
+      "chunk_12_675",
+      "chunk_12_676"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_714",
+      "chunk_12_1049",
+      "chunk_12_1",
+      "chunk_13_1634",
+      "chunk_12_2",
+      "chunk_13_1664",
+      "chunk_12_3",
+      "chunk_13_1746",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_12_2",
+      "chunk_12_1049",
+      "chunk_12_4",
+      "chunk_12_0",
+      "chunk_12_3",
+      "chunk_12_1",
+      "chunk_13_1664",
+      "chunk_13_1746",
+      "chunk_13_1634",
+      "chunk_13_714"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 31,
+    "question": "生成器函数怎么写？",
+    "relevant": [
+      "chunk_13_910",
+      "chunk_12_681",
+      "chunk_12_680"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_680",
+      "chunk_12_1",
+      "chunk_13_910",
+      "chunk_12_681",
+      "chunk_12_2",
+      "chunk_12_684",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_899"
+    ],
+    "reranked": [
+      "chunk_12_0",
+      "chunk_12_4",
+      "chunk_12_3",
+      "chunk_12_2",
+      "chunk_12_684",
+      "chunk_13_899",
+      "chunk_12_681",
+      "chunk_12_1",
+      "chunk_12_680",
+      "chunk_13_910"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 33,
+    "question": "with 上下文管理器怎么用？",
+    "relevant": [
+      "chunk_13_1250",
+      "chunk_13_583",
+      "chunk_12_733"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1249",
+      "chunk_13_1250",
+      "chunk_12_454",
+      "chunk_13_583",
+      "chunk_12_733",
+      "chunk_12_711",
+      "chunk_12_729",
+      "chunk_13_781",
+      "chunk_13_659",
+      "chunk_13_1248"
+    ],
+    "reranked": [
+      "chunk_12_733",
+      "chunk_13_1248",
+      "chunk_13_583",
+      "chunk_13_1249",
+      "chunk_13_659",
+      "chunk_12_729",
+      "chunk_12_711",
+      "chunk_13_781",
+      "chunk_12_454",
+      "chunk_13_1250"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 34,
+    "question": "os 模块有哪些常用功能？",
+    "relevant": [
+      "chunk_13_2003",
+      "chunk_12_689",
+      "chunk_12_691"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_689",
+      "chunk_13_720",
+      "chunk_13_857",
+      "chunk_12_691",
+      "chunk_13_2019",
+      "chunk_13_877",
+      "chunk_12_688",
+      "chunk_13_1192",
+      "chunk_13_1992",
+      "chunk_13_653"
+    ],
+    "reranked": [
+      "chunk_12_688",
+      "chunk_13_653",
+      "chunk_12_689",
+      "chunk_13_2019",
+      "chunk_13_877",
+      "chunk_13_1992",
+      "chunk_13_1192",
+      "chunk_13_857",
+      "chunk_12_691",
+      "chunk_13_720"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 36,
+    "question": "sys.argv 怎么获取命令行参数？",
+    "relevant": [
+      "chunk_12_351",
+      "chunk_12_352",
+      "chunk_12_694"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_46",
+      "chunk_12_45",
+      "chunk_12_791",
+      "chunk_13_1641",
+      "chunk_12_693",
+      "chunk_13_878",
+      "chunk_12_694",
+      "chunk_13_775",
+      "chunk_12_352",
+      "chunk_12_695"
+    ],
+    "reranked": [
+      "chunk_13_1641",
+      "chunk_13_775",
+      "chunk_12_791",
+      "chunk_12_694",
+      "chunk_12_695",
+      "chunk_13_878",
+      "chunk_12_693",
+      "chunk_12_352",
+      "chunk_12_46",
+      "chunk_12_45"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 0.667,
+    "rerank_R@10": 0.667
+  },
+  {
+    "id": 37,
+    "question": "datetime 模块怎么表示日期？",
+    "relevant": [
+      "chunk_12_707",
+      "chunk_12_709",
+      "chunk_13_144"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_708",
+      "chunk_13_1183",
+      "chunk_12_581",
+      "chunk_12_709",
+      "chunk_13_275",
+      "chunk_13_723",
+      "chunk_13_144",
+      "chunk_13_1412",
+      "chunk_12_707",
+      "chunk_12_713"
+    ],
+    "reranked": [
+      "chunk_12_708",
+      "chunk_12_707",
+      "chunk_12_709",
+      "chunk_13_275",
+      "chunk_12_581",
+      "chunk_13_1183",
+      "chunk_13_144",
+      "chunk_13_1412",
+      "chunk_13_723",
+      "chunk_12_713"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 0.333,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 38,
+    "question": "random 模块有哪些常用函数？",
+    "relevant": [
+      "chunk_12_701",
+      "chunk_12_703",
+      "chunk_13_1764"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_47",
+      "chunk_12_701",
+      "chunk_13_1826",
+      "chunk_12_703",
+      "chunk_13_634",
+      "chunk_13_2011",
+      "chunk_13_1764",
+      "chunk_12_1228",
+      "chunk_12_133",
+      "chunk_13_1939"
+    ],
+    "reranked": [
+      "chunk_13_2011",
+      "chunk_13_1939",
+      "chunk_12_1228",
+      "chunk_12_47",
+      "chunk_13_1764",
+      "chunk_13_1826",
+      "chunk_12_701",
+      "chunk_12_703",
+      "chunk_12_133",
+      "chunk_13_634"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 39,
+    "question": "logging 怎么记录日志？",
+    "relevant": [
+      "chunk_12_755",
+      "chunk_12_143",
+      "chunk_12_752"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_752",
+      "chunk_12_755",
+      "chunk_12_599",
+      "chunk_12_143",
+      "chunk_13_162",
+      "chunk_12_478",
+      "chunk_12_1236",
+      "chunk_13_169",
+      "chunk_12_506",
+      "chunk_12_375"
+    ],
+    "reranked": [
+      "chunk_12_478",
+      "chunk_13_169",
+      "chunk_12_755",
+      "chunk_12_375",
+      "chunk_12_143",
+      "chunk_13_162",
+      "chunk_12_752",
+      "chunk_12_599",
+      "chunk_12_1236",
+      "chunk_12_506"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 40,
+    "question": "如何使用 venv 创建虚拟环境？",
+    "relevant": [
+      "chunk_12_784",
+      "chunk_12_783",
+      "chunk_12_782"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_782",
+      "chunk_12_785",
+      "chunk_12_781",
+      "chunk_12_783",
+      "chunk_12_1110",
+      "chunk_12_784",
+      "chunk_13_1735",
+      "chunk_12_16",
+      "chunk_12_788",
+      "chunk_12_780"
+    ],
+    "reranked": [
+      "chunk_12_788",
+      "chunk_13_1735",
+      "chunk_12_1110",
+      "chunk_12_785",
+      "chunk_12_782",
+      "chunk_12_784",
+      "chunk_12_781",
+      "chunk_12_783",
+      "chunk_12_780",
+      "chunk_12_16"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 41,
+    "question": "pip 常用命令有哪些？",
+    "relevant": [
+      "chunk_13_2004",
+      "chunk_12_797",
+      "chunk_12_789"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_797",
+      "chunk_12_789",
+      "chunk_12_666",
+      "chunk_13_1174",
+      "chunk_13_1309",
+      "chunk_13_2004",
+      "chunk_12_877",
+      "chunk_13_700",
+      "chunk_13_824",
+      "chunk_13_1376"
+    ],
+    "reranked": [
+      "chunk_13_2004",
+      "chunk_12_789",
+      "chunk_13_1174",
+      "chunk_12_877",
+      "chunk_13_1376",
+      "chunk_12_797",
+      "chunk_12_666",
+      "chunk_13_824",
+      "chunk_13_1309",
+      "chunk_13_700"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.667,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 42,
+    "question": "lambda 匿名函数怎么写？",
+    "relevant": [
+      "chunk_13_1064",
+      "chunk_13_1347",
+      "chunk_12_1004"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1064",
+      "chunk_13_1481",
+      "chunk_13_1480",
+      "chunk_13_1347",
+      "chunk_12_1004",
+      "chunk_13_1479",
+      "chunk_13_1478",
+      "chunk_13_1619",
+      "chunk_12_597",
+      "chunk_12_1003"
+    ],
+    "reranked": [
+      "chunk_12_1004",
+      "chunk_12_1003",
+      "chunk_13_1478",
+      "chunk_13_1479",
+      "chunk_12_597",
+      "chunk_13_1619",
+      "chunk_13_1347",
+      "chunk_13_1064",
+      "chunk_13_1480",
+      "chunk_13_1481"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 43,
+    "question": "闭包是什么？",
+    "relevant": [
+      "chunk_13_335"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_243",
+      "chunk_13_755",
+      "chunk_12_1",
+      "chunk_12_973",
+      "chunk_12_2",
+      "chunk_13_192",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_13_1588"
+    ],
+    "reranked": [
+      "chunk_12_0",
+      "chunk_12_1",
+      "chunk_12_2",
+      "chunk_12_3",
+      "chunk_12_4",
+      "chunk_12_973",
+      "chunk_13_192",
+      "chunk_13_243",
+      "chunk_13_755",
+      "chunk_13_1588"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 44,
+    "question": "装饰器是什么？",
+    "relevant": [
+      "chunk_12_936",
+      "chunk_12_937"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_12_935",
+      "chunk_13_1550",
+      "chunk_12_1",
+      "chunk_13_180",
+      "chunk_12_2",
+      "chunk_13_1352",
+      "chunk_12_3",
+      "chunk_13_1551",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_13_1352",
+      "chunk_13_1551",
+      "chunk_13_1550",
+      "chunk_12_935",
+      "chunk_13_180",
+      "chunk_12_1",
+      "chunk_12_3",
+      "chunk_12_2",
+      "chunk_12_0",
+      "chunk_12_4"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 45,
+    "question": "assert 语句的用途？",
+    "relevant": [
+      "chunk_13_1213",
+      "chunk_13_1123",
+      "chunk_13_1949"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1123",
+      "chunk_13_1565",
+      "chunk_12_950",
+      "chunk_13_1213",
+      "chunk_12_685",
+      "chunk_13_1060",
+      "chunk_13_1089",
+      "chunk_13_1435",
+      "chunk_13_1949",
+      "chunk_13_1489"
+    ],
+    "reranked": [
+      "chunk_13_1489",
+      "chunk_13_1949",
+      "chunk_13_1565",
+      "chunk_13_1435",
+      "chunk_12_685",
+      "chunk_13_1089",
+      "chunk_13_1060",
+      "chunk_13_1123",
+      "chunk_13_1213",
+      "chunk_12_950"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 46,
+    "question": "del 语句删除变量？",
+    "relevant": [
+      "chunk_12_282",
+      "chunk_13_396",
+      "chunk_12_284"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_750",
+      "chunk_12_284",
+      "chunk_13_752",
+      "chunk_12_282",
+      "chunk_13_744",
+      "chunk_13_396",
+      "chunk_13_734",
+      "chunk_12_283",
+      "chunk_13_1161",
+      "chunk_13_1128"
+    ],
+    "reranked": [
+      "chunk_13_1128",
+      "chunk_13_1161",
+      "chunk_13_734",
+      "chunk_13_744",
+      "chunk_13_396",
+      "chunk_13_750",
+      "chunk_13_752",
+      "chunk_12_283",
+      "chunk_12_284",
+      "chunk_12_282"
+    ],
+    "rrf_R@3": 0.333,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 47,
+    "question": "type 和 isinstance 的区别？",
+    "relevant": [
+      "chunk_12_652",
+      "chunk_13_516",
+      "chunk_13_1316"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_864",
+      "chunk_12_652",
+      "chunk_13_516",
+      "chunk_13_236",
+      "chunk_13_1140",
+      "chunk_12_1082",
+      "chunk_13_1316",
+      "chunk_13_1030",
+      "chunk_13_1698",
+      "chunk_13_322"
+    ],
+    "reranked": [
+      "chunk_13_1698",
+      "chunk_12_652",
+      "chunk_12_1082",
+      "chunk_13_1030",
+      "chunk_13_236",
+      "chunk_13_322",
+      "chunk_13_516",
+      "chunk_13_864",
+      "chunk_13_1140",
+      "chunk_13_1316"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.333,
+    "rrf_R@5": 0.667,
+    "rerank_R@5": 0.333,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 48,
+    "question": "可变类型和不可变类型？",
+    "relevant": [
+      "chunk_13_221",
+      "chunk_13_185",
+      "chunk_13_187"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_0",
+      "chunk_13_185",
+      "chunk_13_221",
+      "chunk_12_1",
+      "chunk_13_187",
+      "chunk_12_2",
+      "chunk_13_222",
+      "chunk_12_3",
+      "chunk_13_197",
+      "chunk_12_4"
+    ],
+    "reranked": [
+      "chunk_13_197",
+      "chunk_13_187",
+      "chunk_13_185",
+      "chunk_13_222",
+      "chunk_13_221",
+      "chunk_12_3",
+      "chunk_12_2",
+      "chunk_12_4",
+      "chunk_12_0",
+      "chunk_12_1"
+    ],
+    "rrf_R@3": 0.667,
+    "rerank_R@3": 0.667,
+    "rrf_R@5": 1.0,
+    "rerank_R@5": 1.0,
+    "rrf_R@10": 1.0,
+    "rerank_R@10": 1.0
+  },
+  {
+    "id": 49,
+    "question": "Python 标识符命名规则？",
+    "relevant": [
+      "chunk_13_79",
+      "chunk_13_78"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_12_247",
+      "chunk_13_24",
+      "chunk_12_733",
+      "chunk_12_1095",
+      "chunk_13_1711",
+      "chunk_13_1458",
+      "chunk_13_1659",
+      "chunk_13_1284",
+      "chunk_12_932",
+      "chunk_12_1296"
+    ],
+    "reranked": [
+      "chunk_12_733",
+      "chunk_12_932",
+      "chunk_12_247",
+      "chunk_13_1659",
+      "chunk_13_1284",
+      "chunk_12_1296",
+      "chunk_12_1095",
+      "chunk_13_24",
+      "chunk_13_1458",
+      "chunk_13_1711"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  },
+  {
+    "id": 50,
+    "question": "Python 有哪些关键字？",
+    "relevant": [
+      "chunk_13_1420"
+    ],
+    "rrf_retrieved@10": [
+      "chunk_13_1982",
+      "chunk_13_24",
+      "chunk_13_1995",
+      "chunk_12_1095",
+      "chunk_12_1310",
+      "chunk_13_1711",
+      "chunk_13_1988",
+      "chunk_13_1659",
+      "chunk_13_2023",
+      "chunk_12_932"
+    ],
+    "reranked": [
+      "chunk_13_24",
+      "chunk_12_932",
+      "chunk_12_1095",
+      "chunk_13_1711",
+      "chunk_13_1659",
+      "chunk_13_1995",
+      "chunk_13_1988",
+      "chunk_12_1310",
+      "chunk_13_2023",
+      "chunk_13_1982"
+    ],
+    "rrf_R@3": 0.0,
+    "rerank_R@3": 0.0,
+    "rrf_R@5": 0.0,
+    "rerank_R@5": 0.0,
+    "rrf_R@10": 0.0,
+    "rerank_R@10": 0.0
+  }
+]

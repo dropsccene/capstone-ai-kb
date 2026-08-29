@@ -54,6 +54,14 @@ class VectorStore():
         return results["documents"][0]
 
     async def hybrid_query(self,query_text:str,top_k:int=3):
+        # CJK 路由（2026-08-28 评测结论）：字符级 BM25 对"中文 query → 英文语料"
+        # 贡献为零（中文单字在英文文本中不可匹配），RRF 中反而挤掉向量路正确答案——
+        # 42 条真值评测：纯向量 hit@3/5/10 = 0.76/0.81/0.86 > RRF 0.74/0.76/0.81。
+        # 中文走纯向量；英文（同语言词法信号有效）保留 BM25+RRF
+        import re
+        if re.search(r'[一-鿿]', query_text):
+            return await self.query(query_text, top_k)
+
         # 1. 获取所有 chunk 原文
         chunks = self.collection.get()
         chunk_texts = chunks["documents"]
@@ -82,22 +90,10 @@ class VectorStore():
         # 并集里每个 id，两路的项相加（缺哪路 .get 补 0）
         total = {k:bm25_item.get(k,0)+vector_item.get(k,0) for k in set(bm25_item)|set(vector_item)}
         # 按总分排序，取前 top_k
-        top = sorted(total.items(),key=lambda kv:kv[1],reverse=True)
-        # 返回 top_k 的原文
-        import requests
-        candidates = [id_to_text[cid] for cid, _ in top[:10]]
-        result = requests.post(
-            "https://api.siliconflow.cn/v1/rerank",
-            headers={"Authorization" : f"Bearer {os.environ.get('SILICONFLOW_API_KEY')}"},
-            json={
-                "model": "BAAI/bge-reranker-v2-m3",
-                "query": query_text,
-                "documents": candidates
-            },timeout=30
-        ).json()
-        relevance_score = sorted(result["results"], key=lambda x: x["relevance_score"], reverse=True)[:top_k]
-        print("RERANK 排序结果:", relevance_score)
-        return [candidates[doc["index"]] for doc in relevance_score]
+        # rerank（bge-reranker-v2-m3）经两轮 Recall@K 评测确认为负优化
+        # （R@3 0.57→0.24 / 0.40→0.28，重排把命中项挤出 top3），已下线，保留 RRF 融合
+        top = sorted(total.items(), key=lambda kv: kv[1], reverse=True)
+        return [id_to_text[cid] for cid, _ in top[:top_k]]
 
     
 if __name__ == "__main__":

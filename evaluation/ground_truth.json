@@ -1,55 +1,378 @@
 {
-  "description": "Ground truth for Recall@K evaluation - 50 test cases",
+  "description": "Ground truth for Recall@K - 42 test cases (Python 3.14 docs, 600-char chunks, 2026-08-28)",
   "test_cases": [
-    {"id": 1, "question": "这个App支持哪些手势类型？", "relevant_chunks": ["chunk_1_18"]},
-    {"id": 2, "question": "音乐控制模块怎么实现的？", "relevant_chunks": ["chunk_1_20", "chunk_1_60"]},
-    {"id": 3, "question": "数据库用的什么技术？", "relevant_chunks": ["chunk_1_40"]},
-    {"id": 4, "question": "图片画廊模块有什么功能？", "relevant_chunks": ["chunk_1_20", "chunk_1_70"]},
-    {"id": 5, "question": "性能要求是什么？", "relevant_chunks": ["chunk_1_30"]},
-    {"id": 6, "question": "手势记录怎么存储的？", "relevant_chunks": ["chunk_1_20", "chunk_1_40"]},
-    {"id": 7, "question": "这个项目叫什么名字？", "relevant_chunks": ["chunk_1_16"]},
-    {"id": 8, "question": "项目面向什么应用场景？", "relevant_chunks": ["chunk_1_16"]},
-    {"id": 9, "question": "手势识别一共能识别几种手势？", "relevant_chunks": ["chunk_1_16", "chunk_1_18"]},
-    {"id": 10, "question": "手势识别用的什么框架？", "relevant_chunks": ["chunk_1_21"]},
-    {"id": 11, "question": "GestureDetector和ScaleGestureDetector分别处理什么？", "relevant_chunks": ["chunk_1_21"]},
-    {"id": 12, "question": "isScaling标志位是干什么的？", "relevant_chunks": ["chunk_1_48", "chunk_1_52"]},
-    {"id": 13, "question": "滑动方向怎么判定的？", "relevant_chunks": ["chunk_1_49", "chunk_1_54"]},
-    {"id": 14, "question": "滑动的距离阈值和速度阈值分别是多少？", "relevant_chunks": ["chunk_1_49"]},
-    {"id": 15, "question": "手势识别的响应时间实测多少？", "relevant_chunks": ["chunk_1_79"]},
-    {"id": 16, "question": "GestureType枚举有什么属性？", "relevant_chunks": ["chunk_1_19"]},
-    {"id": 17, "question": "GestureCallback接口定义了哪些方法？", "relevant_chunks": ["chunk_1_35"]},
-    {"id": 18, "question": "TouchTrailView怎么实现渐隐效果的？", "relevant_chunks": ["chunk_1_23", "chunk_1_57", "chunk_1_58"]},
-    {"id": 19, "question": "TouchTrailView的刷新率是多少？", "relevant_chunks": ["chunk_1_23"]},
-    {"id": 20, "question": "轨迹点的生命周期是多少秒？", "relevant_chunks": ["chunk_1_89"]},
-    {"id": 21, "question": "单击手势在媒体模块对应什么操作？", "relevant_chunks": ["chunk_1_62", "chunk_1_63"]},
-    {"id": 22, "question": "左滑和右滑分别做什么？", "relevant_chunks": ["chunk_1_63", "chunk_1_64"]},
-    {"id": 23, "question": "播放列表有几首歌？", "relevant_chunks": ["chunk_1_60"]},
-    {"id": 24, "question": "唱片旋转动画怎么实现的？", "relevant_chunks": ["chunk_1_60", "chunk_1_61"]},
-    {"id": 25, "question": "音量怎么调节的？", "relevant_chunks": ["chunk_1_64", "chunk_1_65"]},
-    {"id": 26, "question": "图片缩放范围是多少倍？", "relevant_chunks": ["chunk_1_66"]},
-    {"id": 27, "question": "双击切换的缩放倍数是多少？", "relevant_chunks": ["chunk_1_66", "chunk_1_71"]},
-    {"id": 28, "question": "图片怎么居中显示的？", "relevant_chunks": ["chunk_1_66", "chunk_1_67"]},
-    {"id": 29, "question": "画廊的示例图片怎么生成的？", "relevant_chunks": ["chunk_1_68"]},
-    {"id": 30, "question": "手势记录页面显示什么信息？", "relevant_chunks": ["chunk_1_73", "chunk_1_75"]},
-    {"id": 31, "question": "记录按什么顺序排列？", "relevant_chunks": ["chunk_1_75"]},
-    {"id": 32, "question": "清空记录需要确认吗？怎么确认？", "relevant_chunks": ["chunk_1_73", "chunk_1_75"]},
-    {"id": 33, "question": "数据库表有哪些字段？", "relevant_chunks": ["chunk_1_46"]},
-    {"id": 34, "question": "数据库单例模式怎么实现的？", "relevant_chunks": ["chunk_1_40", "chunk_1_47"]},
-    {"id": 35, "question": "数据库操作在哪个线程执行？", "relevant_chunks": ["chunk_1_47"]},
-    {"id": 36, "question": "用了什么导航方案？", "relevant_chunks": ["chunk_1_24"]},
-    {"id": 37, "question": "Fragment怎么切换的？show/hide还是replace？", "relevant_chunks": ["chunk_1_24", "chunk_1_25"]},
-    {"id": 38, "question": "MainActivity负责什么？", "relevant_chunks": ["chunk_1_37"]},
-    {"id": 39, "question": "用的什么IDE开发？", "relevant_chunks": ["chunk_1_26"]},
-    {"id": 40, "question": "Gradle版本是多少？", "relevant_chunks": ["chunk_1_26"]},
-    {"id": 41, "question": "用了哪些第三方库？", "relevant_chunks": ["chunk_1_27", "chunk_1_28"]},
-    {"id": 42, "question": "测试用例通过率多少？", "relevant_chunks": ["chunk_1_79"]},
-    {"id": 43, "question": "真机测试的动画帧率是多少？", "relevant_chunks": ["chunk_1_79"]},
-    {"id": 44, "question": "模拟器测试用的什么设备？", "relevant_chunks": ["chunk_1_79"]},
-    {"id": 45, "question": "手势识别响应时间要求是多少毫秒以内？", "relevant_chunks": ["chunk_1_30"]},
-    {"id": 46, "question": "动画帧率要求是多少fps以上？", "relevant_chunks": ["chunk_1_30"]},
-    {"id": 47, "question": "缩放和单击冲突怎么解决的？", "relevant_chunks": ["chunk_1_88"]},
-    {"id": 48, "question": "底部导航和手势滑动冲突怎么解决的？", "relevant_chunks": ["chunk_1_25", "chunk_1_82"]},
-    {"id": 49, "question": "统一引擎多场景控制是什么意思？", "relevant_chunks": ["chunk_1_81"]},
-    {"id": 50, "question": "项目有什么差异化优势？", "relevant_chunks": ["chunk_1_85"]}
+    {
+      "id": 2,
+      "question": "Python 中字符串有哪些字面量写法？",
+      "relevant_chunks": [
+        "chunk_13_123",
+        "chunk_13_2023",
+        "chunk_13_1995"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "f-string 格式化字符串怎么用？",
+      "relevant_chunks": [
+        "chunk_13_128",
+        "chunk_13_1482",
+        "chunk_13_1485"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "赋值语句和表达式求值顺序？",
+      "relevant_chunks": [
+        "chunk_13_1071",
+        "chunk_13_866",
+        "chunk_13_1063"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "if / elif / else 的语法结构？",
+      "relevant_chunks": [
+        "chunk_13_1971",
+        "chunk_13_1448",
+        "chunk_13_1209"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "for 循环如何遍历字典？",
+      "relevant_chunks": [
+        "chunk_12_311"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "range 函数的三个参数含义？",
+      "relevant_chunks": [
+        "chunk_12_224",
+        "chunk_12_125",
+        "chunk_13_855"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "break 和 continue 的区别？",
+      "relevant_chunks": [
+        "chunk_12_133",
+        "chunk_12_134",
+        "chunk_12_135"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "函数定义时如何设置默认参数？",
+      "relevant_chunks": [
+        "chunk_13_1338",
+        "chunk_13_1339",
+        "chunk_13_1388"
+      ]
+    },
+    {
+      "id": 11,
+      "question": "*args 和 **kwargs 是什么？",
+      "relevant_chunks": [
+        "chunk_12_1038",
+        "chunk_12_1037",
+        "chunk_13_1490"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "字典推导式怎么写？",
+      "relevant_chunks": [
+        "chunk_12_309",
+        "chunk_12_308",
+        "chunk_12_941"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "元组和列表有什么区别？",
+      "relevant_chunks": [
+        "chunk_13_535",
+        "chunk_12_290",
+        "chunk_12_763"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "集合有哪些常用操作？",
+      "relevant_chunks": [
+        "chunk_12_295",
+        "chunk_12_296",
+        "chunk_13_231"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "包和相对导入怎么用？",
+      "relevant_chunks": [
+        "chunk_12_412",
+        "chunk_13_1171",
+        "chunk_12_414"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "字符串有哪些格式化方法？",
+      "relevant_chunks": [
+        "chunk_12_1073",
+        "chunk_12_438",
+        "chunk_12_446"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "如何读写文本文件？",
+      "relevant_chunks": [
+        "chunk_12_456",
+        "chunk_12_468",
+        "chunk_12_482"
+      ]
+    },
+    {
+      "id": 21,
+      "question": "json 模块怎么用？",
+      "relevant_chunks": [
+        "chunk_12_480",
+        "chunk_12_481",
+        "chunk_12_482"
+      ]
+    },
+    {
+      "id": 22,
+      "question": "pickle 和 json 有什么区别？",
+      "relevant_chunks": [
+        "chunk_12_484",
+        "chunk_12_1304",
+        "chunk_12_485"
+      ]
+    },
+    {
+      "id": 24,
+      "question": "如何自定义异常类？",
+      "relevant_chunks": [
+        "chunk_12_527",
+        "chunk_13_1141",
+        "chunk_13_604"
+      ]
+    },
+    {
+      "id": 25,
+      "question": "raise 语句的用法？",
+      "relevant_chunks": [
+        "chunk_13_1138",
+        "chunk_13_1434",
+        "chunk_13_1139"
+      ]
+    },
+    {
+      "id": 26,
+      "question": "finally 子句的作用？",
+      "relevant_chunks": [
+        "chunk_13_1246",
+        "chunk_12_539",
+        "chunk_12_531"
+      ]
+    },
+    {
+      "id": 27,
+      "question": "如何定义类？类对象和实例对象的关系？",
+      "relevant_chunks": [
+        "chunk_13_504",
+        "chunk_12_623",
+        "chunk_13_320"
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Python 继承和多重继承怎么用？",
+      "relevant_chunks": [
+        "chunk_12_653",
+        "chunk_12_658",
+        "chunk_12_887"
+      ]
+    },
+    {
+      "id": 29,
+      "question": "私有变量和名称改写机制？",
+      "relevant_chunks": [
+        "chunk_12_664",
+        "chunk_12_660",
+        "chunk_12_667"
+      ]
+    },
+    {
+      "id": 30,
+      "question": "迭代器协议是什么？",
+      "relevant_chunks": [
+        "chunk_12_675",
+        "chunk_12_676",
+        "chunk_12_677",
+        "chunk_12_678"
+      ]
+    },
+    {
+      "id": 31,
+      "question": "生成器函数怎么写？",
+      "relevant_chunks": [
+        "chunk_12_680",
+        "chunk_13_910",
+        "chunk_12_681"
+      ]
+    },
+    {
+      "id": 33,
+      "question": "with 上下文管理器怎么用？",
+      "relevant_chunks": [
+        "chunk_13_1250",
+        "chunk_13_583",
+        "chunk_12_733"
+      ]
+    },
+    {
+      "id": 34,
+      "question": "os 模块有哪些常用功能？",
+      "relevant_chunks": [
+        "chunk_13_2003",
+        "chunk_12_689",
+        "chunk_12_691"
+      ]
+    },
+    {
+      "id": 36,
+      "question": "sys.argv 怎么获取命令行参数？",
+      "relevant_chunks": [
+        "chunk_12_694",
+        "chunk_12_352",
+        "chunk_12_351"
+      ]
+    },
+    {
+      "id": 37,
+      "question": "datetime 模块怎么表示日期？",
+      "relevant_chunks": [
+        "chunk_13_144",
+        "chunk_12_709",
+        "chunk_12_707"
+      ]
+    },
+    {
+      "id": 38,
+      "question": "random 模块有哪些常用函数？",
+      "relevant_chunks": [
+        "chunk_13_1764",
+        "chunk_12_701",
+        "chunk_12_703"
+      ]
+    },
+    {
+      "id": 39,
+      "question": "logging 怎么记录日志？",
+      "relevant_chunks": [
+        "chunk_12_755",
+        "chunk_12_752",
+        "chunk_12_143"
+      ]
+    },
+    {
+      "id": 40,
+      "question": "如何使用 venv 创建虚拟环境？",
+      "relevant_chunks": [
+        "chunk_12_784",
+        "chunk_12_783",
+        "chunk_12_782"
+      ]
+    },
+    {
+      "id": 41,
+      "question": "pip 常用命令有哪些？",
+      "relevant_chunks": [
+        "chunk_12_789",
+        "chunk_12_797",
+        "chunk_13_2004"
+      ]
+    },
+    {
+      "id": 42,
+      "question": "lambda 匿名函数怎么写？",
+      "relevant_chunks": [
+        "chunk_13_1064",
+        "chunk_13_1347",
+        "chunk_12_1004"
+      ]
+    },
+    {
+      "id": 43,
+      "question": "闭包是什么？",
+      "relevant_chunks": [
+        "chunk_13_335",
+        "chunk_13_1536",
+        "chunk_13_1537"
+      ]
+    },
+    {
+      "id": 44,
+      "question": "装饰器是什么？",
+      "relevant_chunks": [
+        "chunk_12_936",
+        "chunk_12_937"
+      ]
+    },
+    {
+      "id": 45,
+      "question": "assert 语句的用途？",
+      "relevant_chunks": [
+        "chunk_13_1949",
+        "chunk_13_1123",
+        "chunk_13_1213"
+      ]
+    },
+    {
+      "id": 46,
+      "question": "del 语句删除变量？",
+      "relevant_chunks": [
+        "chunk_12_284",
+        "chunk_12_282",
+        "chunk_13_396"
+      ]
+    },
+    {
+      "id": 47,
+      "question": "type 和 isinstance 的区别？",
+      "relevant_chunks": [
+        "chunk_13_1316",
+        "chunk_12_652",
+        "chunk_13_516"
+      ]
+    },
+    {
+      "id": 48,
+      "question": "可变类型和不可变类型？",
+      "relevant_chunks": [
+        "chunk_13_185",
+        "chunk_13_221",
+        "chunk_13_187"
+      ]
+    },
+    {
+      "id": 49,
+      "question": "Python 标识符命名规则？",
+      "relevant_chunks": [
+        "chunk_13_78",
+        "chunk_13_79"
+      ]
+    },
+    {
+      "id": 50,
+      "question": "Python 有哪些关键字？",
+      "relevant_chunks": [
+        "chunk_13_1420"
+      ]
+    }
   ]
 }

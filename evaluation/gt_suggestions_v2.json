@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "keywords": [
+      "interactive mode",
+      "exit()",
+      "quit()"
+    ],
+    "suggested": [
+      "chunk_9_1985",
+      "chunk_9_1603",
+      "chunk_9_1416"
+    ],
+    "sig_count": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 6,
+    "keywords": [
+      "looping over",
+      "dictionaries"
+    ],
+    "suggested": [
+      "chunk_9_1679",
+      "chunk_9_1674",
+      "chunk_9_1639"
+    ],
+    "sig_count": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 8,
+    "keywords": [
+      "break and continue"
+    ],
+    "suggested": [
+      "chunk_8_135",
+      "chunk_8_131"
+    ],
+    "sig_count": [
+      1,
+      1
+    ]
+  },
+  {
+    "id": 9,
+    "keywords": [
+      "match statement",
+      "case"
+    ],
+    "suggested": [
+      "chunk_9_1453",
+      "chunk_9_1275",
+      "chunk_9_1269"
+    ],
+    "sig_count": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "id": 12,
+    "keywords": [
+      "list comprehension"
+    ],
+    "suggested": [
+      "chunk_9_1990",
+      "chunk_9_1622",
+      "chunk_8_1305"
+    ],
+    "sig_count": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 15,
+    "keywords": [
+      "set",
+      "union",
+      "intersection"
+    ],
+    "suggested": [
+      "chunk_9_231",
+      "chunk_8_296",
+      "chunk_9_82"
+    ],
+    "sig_count": [
+      3,
+      3,
+      2
+    ]
+  },
+  {
+    "id": 16,
+    "keywords": [
+      "import statement",
+      "importlib"
+    ],
+    "suggested": [
+      "chunk_9_684",
+      "chunk_9_272",
+      "chunk_9_1979"
+    ],
+    "sig_count": [
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "id": 17,
+    "keywords": [
+      "module search path"
+    ],
+    "suggested": [
+      "chunk_8_394",
+      "chunk_8_357",
+      "chunk_8_353"
+    ],
+    "sig_count": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 21,
+    "keywords": [
+      "json.dump",
+      "json.load"
+    ],
+    "suggested": [
+      "chunk_8_482",
+      "chunk_8_481"
+    ],
+    "sig_count": [
+      2,
+      1
+    ]
+  },
+  {
+    "id": 23,
+    "keywords": [
+      "catching",
+      "exceptions",
+      "except"
+    ],
+    "suggested": [
+      "chunk_8_514",
+      "chunk_9_1606",
+      "chunk_9_1563"
+    ],
+    "sig_count": [
+      3,
+      2,
+      2
+    ]
+  },
+  {
+    "id": 30,
+    "keywords": [
+      "iterator protocol"
+    ],
+    "suggested": [
+      "chunk_8_677"
+    ],
+    "sig_count": [
+      1
+    ]
+  },
+  {
+    "id": 32,
+    "keywords": [
+      "yield",
+      "generator"
+    ],
+    "suggested": [
+      "chunk_9_1979",
+      "chunk_9_1974",
+      "chunk_9_1584"
+    ],
+    "sig_count": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "id": 35,
+    "keywords": [
+      "pathlib",
+      "os.path"
+    ],
+    "suggested": [
+      "chunk_9_1658",
+      "chunk_9_1657",
+      "chunk_8_1042"
+    ],
+    "sig_count": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 43,
+    "keywords": [
+      "closure",
+      "nested"
+    ],
+    "suggested": [
+      "chunk_9_1534",
+      "chunk_9_335",
+      "chunk_9_1994"
+    ],
+    "sig_count": [
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "id": 44,
+    "keywords": [
+      "decorator",
+      "wrapper"
+    ],
+    "suggested": [
+      "chunk_9_1551",
+      "chunk_8_936",
+      "chunk_9_1968"
+    ],
+    "sig_count": [
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "id": 49,
+    "keywords": [
+      "identifier",
+      "letter"
+    ],
+    "suggested": [
+      "chunk_9_78",
+      "chunk_9_1982",
+      "chunk_9_1924"
+    ],
+    "sig_count": [
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 50,
+    "keywords": [
+      "keyword",
+      "soft keyword"
+    ],
+    "suggested": [
+      "chunk_9_2013",
+      "chunk_9_1420",
+      "chunk_9_1289"
+    ],
+    "sig_count": [
+      2,
+      2,
+      2
+    ]
+  }
+]

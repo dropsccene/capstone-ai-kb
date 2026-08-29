@@ -1,0 +1,372 @@
+[
+  {
+    "id": 2,
+    "question": "Python 中字符串有哪些字面量写法？",
+    "answer_texts": [
+      "cape\nsequences (typically Hexadecimal character or Octal character):\n2.5. String and Bytes literals\n15\n\nThe Python Language Reference, Release 3.14.0rc3\n>>> b'\\x89PNG\\r\\n\\x1a\\n'\nb'\\x89PNG\\r\\n\\x1a\\n'\n>>> list(b'\\x89PNG\\r\\n\\x1a\\n')\n[137, 80, 78, 71, 13, 10, 26, 10]\nSimilarly, a zero byte must be expre",
+      "\nstring literal, 12\nu\"\nstring literal, 12\nunary\narithmetic operation, 97\nbitwise operation, 97\nunbinding\nname, 109\nUnboundLocalError, 68\nUnicode, 26\nuniversal newlines, 177\nUNIX, 141\nunpacking\ndictionary, 88\n216\nIndex\n\nThe Python Language Reference, Release 3.14.0rc3\nin function calls, 95\niterable, ",
+      "token, 7, 117\nNone\nobject, 24, 105\nnonlocal\nstatement, 115\nnot\noperator, 102\nnot in\noperator, 101\nnotation, 4\nNotImplemented\nobject, 24\nnull\n212\nIndex\n\nThe Python Language Reference, Release 3.14.0rc3\noperation, 109\nnumber, 18\ncomplex, 25\nfloating-point, 25\nnumeric\nobject, 24, 35\nnumeric literal, 18"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "f-string 格式化字符串怎么用？",
+    "answer_texts": [
+      "tted string literal or f-string is a string literal that is prefixed with ‘f’ or ‘F’. These strings may contain replace-\nment fields, which are expressions delimited by curly braces {}. While other string literals always have a constant\nvalue, formatted strings are really expressions evaluated at ru",
+      "m: NAME\n# LITERALS\n# ========\nfstring_middle:\n| fstring_replacement_field\n| FSTRING_MIDDLE\nfstring_replacement_field:\n| '{' annotated_rhs '='? [fstring_conversion] [fstring_full_format_spec] '}'\nfstring_conversion:\n| \"!\" NAME\nfstring_full_format_spec:\n| ':' fstring_format_spec*\nfstring_format_spec:\n",
+      "ent_field:\n| '{' annotated_rhs '='? [fstring_conversion] [tstring_full_format_spec] '}'\ntstring_middle:\n| tstring_replacement_field\n| TSTRING_MIDDLE\ntstring:\n| TSTRING_START tstring_middle* TSTRING_END\nstring: STRING\nstrings:\n| (fstring|string)+\n| tstring+\nlist:\n| '[' [star_named_expressions] ']'\ntu"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "赋值语句和表达式求值顺序？",
+    "answer_texts": [
+      "s from left to right. Notice that while evaluating an assignment, the right-hand side is\nevaluated before the left-hand side.\nIn the following lines, expressions will be evaluated in the arithmetic order of their suffixes:\nexpr1, expr2, expr3, expr4\n(expr1, expr2, expr3, expr4)\n{expr1: expr2, expr3:",
+      " is given, they are evaluated from left to right to define the entries of the\ndictionary: each key object is used as a key into the dictionary to store the corresponding value. This means that you\ncan specify the same key multiple times in the dict item list, and the final dictionary’s value for tha",
+      "ve the lowest priority of all Python operations.\nThe expression x if C else y first evaluates the condition, C rather than x. If C is true, x is evaluated and its\nvalue is returned; otherwise, y is evaluated and its value is returned.\nSee PEP 308 for more details about conditional expressions.\n6.14 "
+    ]
+  },
+  {
+    "id": 5,
+    "question": "if / elif / else 的语法结构？",
+    "answer_texts": [
+      "al, 19\nEAFP, 166\nelif\nkeyword, 118\nEllipsis\nobject, 24\nelse\nconditional expression, 102\ndangling, 117\nkeyword, 112, 118, 119, 121\nempty\nlist, 88\ntuple, 26, 87\nencoding declarations (source file), 7\nenvironment, 68\nenvironment variable\nPYTHON_GIL, 168\nPYTHONHASHSEED, 45\nPYTHONNODEBUGRANGES, 38\nPYTHON",
+      "tmt:\n| 'elif' named_expression ':' block elif_stmt\n| 'elif' named_expression ':' block [else_block]\nelse_block:\n| 'else' ':' block\n# While statement\n# ---------------\n(continues on next page)\n148\nChapter 10. Full Grammar specification\n\nThe Python Language Reference, Release 3.14.0rc3\n(continued from",
+      "tion:\nif_stmt: \"if\" assignment_expression \":\" suite\n(\"elif\" assignment_expression \":\" suite)*\n[\"else\" \":\" suite]\nIt selects exactly one of the suites by evaluating the expressions one by one until one is found to be true (see section\nBoolean operations for the definition of true and false); then tha"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "for 循环如何遍历字典？",
+    "answer_texts": [
+      "{'gallahad': 'the pure', 'robin': 'the brave'}\n>>> for k, v in knights.items():\nprint(k, v)\ngallahad the pure\nrobin the brave\nWhen looping through a sequence, the position index and corresponding value can be retrieved at the same time using\nthe enumerate() function.\n>>> for i, v in enumerate(['tic'"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "range 函数的三个参数含义？",
+    "answer_texts": [
+      "they are not available separately, write the function call with the *-operator to unpack the arguments\nout of a list or tuple:\n>>> list(range(3, 6))\n# normal call with separate arguments\n[3, 4, 5]\n>>> args = [3, 6]\n>>> list(range(*args))\n# call with arguments unpacked from a list\n[3, 4, 5]\nIn the sa",
+      "ge() Function\nIf you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates\narithmetic progressions:\n>>> for i in range(5):\nprint(i)\n0\n1\n2\n3\n4\nThe given end point is never part of the generated sequence; range(10) generates 10 values, the legal indi",
+      "ample: [x*y for x in range(10) for y in range(x, x+10)].\n6.2. Atoms\n87\n\nThe Python Language Reference, Release 3.14.0rc3\nTo ensure the comprehension always results in a container of the appropriate type, yield and yield from expres-\nsions are prohibited in the implicitly nested scope.\nSince Python 3"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "break 和 continue 的区别？",
+    "answer_texts": [
+      "ext iteration of the loop:\n>>> for num in range(2, 10):\nif num % 2 == 0:\nprint(f\"Found an even number {num}\")\ncontinue\nprint(f\"Found an odd number {num}\")\nFound an even number 2\nFound an odd number 3\nFound an even number 4\nFound an odd number 5\nFound an even number 6\nFound an odd number 7\nFound an e",
+      "und an odd number 7\nFound an even number 8\nFound an odd number 9\n4.5 else Clauses on Loops\nIn a for or while loop the break statement may be paired with an else clause. If the loop finishes without\nexecuting the break, the else clause executes.\nIn a for loop, the else clause is executed after the lo",
+      "lause is executed after the loop finishes its final iteration, that is, if no break occurred.\nIn a while loop, it’s executed after the loop’s condition becomes false.\n4.4. break and continue Statements\n19\n\nPython Tutorial, Release 3.14.0rc3\nIn either kind of loop, the else clause is not executed if "
+    ]
+  },
+  {
+    "id": 10,
+    "question": "函数定义时如何设置默认参数？",
+    "answer_texts": [
+      "has a default value, all following parameters up until the\n“*” must also have a default value — this is a syntactic restriction that is not expressed by the grammar.\nDefault parameter values are evaluated from left to right when the function definition is executed. This means\nthat the expression is ",
+      " means\nthat the expression is evaluated once, when the function is defined, and that the same “pre-computed” value is used\nfor each call. This is especially important to understand when a default parameter value is a mutable object, such as\na list or a dictionary: if the function modifies the object",
+      "s not evaluated when the object is created, but only when the type\nparameter’s __default__ attribute is accessed. To this end, the default value is evaluated in a separate annotation\nscope. If no default value is specified for a type parameter, the __default__ attribute is set to the special sentine"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "*args 和 **kwargs 是什么？",
+    "answer_texts": [
+      "or example kwargs in the example above.\nParameters can specify both optional and required arguments, as well as default values for some optional\narguments.\nSee also the argument glossary entry, the FAQ question on the difference between arguments and parameters,\nthe inspect.Parameter class, the Func",
+      "for example args in the following:\n• var-keyword: specifies that arbitrarily many keyword arguments can be provided (in addition to any key-\nword arguments already accepted by other parameters). Such a parameter can be defined by prepending\nthe parameter name with **, for example kwargs in the examp",
+      "rgs ]\n| kwargs\nkwargs:\n| ','.kwarg_or_starred+ ',' ','.kwarg_or_double_starred+\n| ','.kwarg_or_starred+\n| ','.kwarg_or_double_starred+\nstarred_expression:\n| '*' expression\nkwarg_or_starred:\n| NAME '=' expression\n| starred_expression\nkwarg_or_double_starred:\n| NAME '=' expression\n| '**' expression\n# "
+    ]
+  },
+  {
+    "id": 13,
+    "question": "字典推导式怎么写？",
+    "answer_texts": [
+      "ido': 4127, 'jack': 4098}\nIn addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:\n>>> {x: x**2 for x in (2, 4, 6)}\n{2: 4, 4: 16, 6: 36}\nWhen the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments:\n>>> dict(sa",
+      "do', 'irv']\n>>> sorted(tel)\n['guido', 'irv', 'jack']\n>>> 'guido' in tel\nTrue\n>>> 'jack' not in tel\nFalse\nThe dict() constructor builds dictionaries directly from sequences of key-value pairs:\n>>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])\n{'sape': 4139, 'guido': 4127, 'jack': 4098}\nIn a",
+      "led a hash in Perl.\ndictionary comprehension\nA compact way to process all or part of the elements in an iterable and return a dictionary with the re-\nsults. results = {n: n ** 2 for n in range(10)} generates a dictionary containing key n mapped\nto value n ** 2. See comprehensions.\ndictionary view\nTh"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "元组和列表有什么区别？",
+    "answer_texts": [
+      "ct\nclass itself. Containers usually are sequences (such as lists or tuples) or mappings (like dictionaries), but can\nrepresent other containers as well. The first set of methods is used either to emulate a sequence or to emulate a\nmapping; the difference is that for a sequence, the allowable keys sh",
+      " in different situations and for different purposes. Tuples\nare immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking (see later\nin this section) or indexing (or even by attribute in the case of namedtuples). Lists are mutable, and their elements\nare usu",
+      "ows an array of numbers stored as two byte unsigned binary numbers (typecode\n\"H\") rather than the usual 16 bytes per entry for regular lists of Python int objects:\n>>> from array import array\n>>> a = array('H', [4000, 10, 700, 22222])\n>>> sum(a)\n26932\n>>> a[1:3]\narray('H', [10, 700])\nThe collections"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "集合有哪些常用操作？",
+    "answer_texts": [
+      "ion of tuple packing and sequence unpacking.\n5.4 Sets\nPython also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses\ninclude membership testing and eliminating duplicate entries. Set objects also support mathematical operations like\nunion, intersec",
+      "perations like\nunion, intersection, difference, and symmetric difference.\n38\nChapter 5. Data Structures\n\nPython Tutorial, Release 3.14.0rc3\nCurly braces or the set() function can be used to create sets. Note: to create an empty set you have to use set(),\nnot {}; the latter creates an empty dictionar"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "包和相对导入怎么用？",
+    "answer_texts": [
+      " structured into subpackages (as with the sound package in the example), you can use absolute\nimports to refer to submodules of siblings packages. For example, if the module sound.filters.vocoder needs\nto use the echo module in the sound.effects package, it can use from sound.effects import echo.\nYo",
+      "empting to\nuse it in class or function definitions will raise a SyntaxError.\nWhen specifying what module to import you do not have to specify the absolute name of the module. When a module\nor package is contained within another package it is possible to make a relative import within the same top pac",
+      ", you might use:\nfrom . import echo\nfrom .. import formats\nfrom ..filters import equalizer\nNote that relative imports are based on the name of the current module’s package. Since the main module does\nnot have a package, modules intended for use as the main module of a Python application must always "
+    ]
+  },
+  {
+    "id": 19,
+    "question": "字符串有哪些格式化方法？",
+    "answer_texts": [
+      "nts (in range U+0000–U+10FFFF). To store or transfer\na string, it needs to be serialized as a sequence of bytes.\nSerializing a string into a sequence of bytes is known as “encoding”, and recreating the string from the sequence\nof bytes is known as “decoding”.\nThere are a variety of different text se",
+      "nd characters within them (called format fields) are replaced with the objects passed into the str.\nformat() method. A number in the brackets can be used to refer to the position of the object passed into the\nstr.format() method.\n>>> print('{0} and {1}'.format('spam', 'eggs'))\nspam and eggs\n>>> prin",
+      "12\n9\n81\n729\n10 100 1000\nFor a complete overview of string formatting with str.format(), see formatstrings.\n7.1.3 Manual String Formatting\nHere’s the same table of squares and cubes, formatted manually:\n>>> for x in range(1, 11):\nprint(repr(x).rjust(2), repr(x*x).rjust(3), end=' ')\n# Note use of 'end"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "如何读写文本文件？",
+    "answer_texts": [
+      "\nNormally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded\nin a specific encoding. If encoding is not specified, the default is platform dependent (see open()). Because UTF-\n8 is the modern de-facto standard, encoding=\"utf-8\" is recommend",
+      "le newline.\n>>> f.readline()\n'This is the first line of the file.\\n'\n>>> f.readline()\n'Second line of the file\\n'\n>>> f.readline()\n''\nFor reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple\ncode:\n>>> for line in f:\nprint(line, end='')\nThi",
+      "mply serializes the object to a text file. So if f is a text\nfile object opened for writing, we can do this:\njson.dump(x, f)\nTo decode the object again, if f is a binary file or text file object which has been opened for reading:\nx = json.load(f)\n® Note\nJSON files must be encoded in UTF-8. Use encod"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "json 模块怎么用？",
+    "answer_texts": [
+      "k connection to some\ndistant machine.\n® Note\nThe JSON format is commonly used by modern applications to allow for data exchange. Many programmers are\nalready familiar with it, which makes it a good choice for interoperability.\nIf you have an object x, you can view its JSON string representation with",
+      "SON string representation with a simple line of code:\n>>> import json\n>>> x = [1, 'simple', 'list']\n>>> json.dumps(x)\n'[1, \"simple\", \"list\"]'\n7.2. Reading and Writing Files\n59\n\nPython Tutorial, Release 3.14.0rc3\nAnother variant of the dumps() function, called dump(), simply serializes the object to ",
+      "mply serializes the object to a text file. So if f is a text\nfile object opened for writing, we can do this:\njson.dump(x, f)\nTo decode the object again, if f is a binary file or text file object which has been opened for reading:\nx = json.load(f)\n® Note\nJSON files must be encoded in UTF-8. Use encod"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "pickle 和 json 有什么区别？",
+    "answer_texts": [
+      "reference for the json module contains an explanation of this.\nµ See also\npickle - the pickle module\nContrary to JSON, pickle is a protocol which allows the serialization of arbitrarily complex Python objects. As\nsuch, it is specific to Python and cannot be used to communicate with applications writ",
+      ", 87\nI\nIDLE, 125\nimmortal, 125\nimmutable, 125\nimport path, 125\nimporter, 125\nimporting, 125\ninteractive, 125\ninterpolated string literal, 54\ninterpreted, 125\ninterpreter shutdown, 125\niterable, 125\niterator, 126\nJ\njson\nmodule, 59\nK\nkey function, 126\nkeyword argument, 126\nL\nlambda, 126\nLBYL, 126\nlexi",
+      "unicate with applications written in other languages. It\nis also insecure by default: deserializing pickle data coming from an untrusted source can execute arbitrary code,\nif the data was crafted by a skilled attacker.\n60\nChapter 7. Input and Output\n\nCHAPTER\nEIGHT\nERRORS AND EXCEPTIONS\nUntil now err"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "如何自定义异常类？",
+    "answer_texts": [
+      "tin-exceptions.\n8.6 User-defined Exceptions\nPrograms may name their own exceptions by creating a new exception class (see Classes for more about Python\nclasses). Exceptions should typically be derived from the Exception class, either directly or indirectly.\nException classes can be defined which do ",
+      " class, the value is the instance itself.\nA traceback object is normally created automatically when an exception is raised and attached to it as the\n__traceback__ attribute.\nYou can create an exception and set your own traceback in one step using the\nwith_traceback() exception method (which returns ",
+      "\nFor custom classes, implicit invocations of special methods are only guaranteed to work correctly if defined on an\nobject’s type, not in the object’s instance dictionary. That behaviour is the reason why the following code raises an\nexception:\n>>> class C:\npass\n>>> c = C()\n(continues on next page)\n"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "raise 语句的用法？",
+    "answer_texts": [
+      " sufficient to cause that definition to create a generator\nfunction instead of a normal function.\nFor full details of yield semantics, refer to the Yield expressions section.\n7.8 The raise statement\nraise_stmt: \"raise\" [expression [\"from\" expression]]\nIf no expressions are present, raise re-raises t",
+      " '**='\n| '//='\nreturn_stmt:\n| 'return' [star_expressions]\n(continues on next page)\n145\n\nThe Python Language Reference, Release 3.14.0rc3\n(continued from previous page)\nraise_stmt:\n| 'raise' expression ['from' expression ]\n| 'raise'\npass_stmt:\n| 'pass'\nbreak_stmt:\n| 'break'\ncontinue_stmt:\n| 'continue",
+      "are present, raise re-raises the exception that is currently being handled, which is also known as\nthe active exception. If there isn’t currently an active exception, a RuntimeError exception is raised indicating that\nthis is an error.\nOtherwise, raise evaluates the first expression as the exception"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "finally 子句的作用？",
+    "answer_texts": [
+      "e last return statement executed. Since the finally clause\nalways executes, a return statement executed in the finally clause will always be the last one executed. The\nfollowing function returns ‘finally’.\ndef foo():\ntry:\nreturn 'try'\nfinally:\nreturn 'finally'\nChanged in version 3.8: Prior to Python",
+      "ted in any event. The TypeError raised by dividing two strings is not\nhandled by the except clause and therefore re-raised after the finally clause has been executed.\nIn real world applications, the finally clause is useful for releasing external resources (such as files or network\nconnections), reg",
+      "a finally clause is present, the finally clause will execute as the last task before the try statement completes.\nThe finally clause runs whether or not the try statement produces an exception. The following points discuss\nmore complex cases when an exception occurs:\n• If an exception occurs during "
+    ]
+  },
+  {
+    "id": 27,
+    "question": "如何定义类？类对象和实例对象的关系？",
+    "answer_texts": [
+      "class object is the one that will be referenced by the zero-argument form of super(). __class__ is an implicit\nclosure reference created by the compiler if any methods in a class body refer to either __class__ or super. This\nallows the zero argument form of super() to correctly identify the class be",
+      "instance is referenced, the instance’s class is\nsearched. If the name denotes a valid class attribute that is a function object, references to both the instance object\nand the function object are packed into a method object. When the method object is called with an argument list, a\nnew argument list",
+      "ple:\n>>> class A: pass\n>>> class B(A): pass\n>>> A.__subclasses__()\n[<class 'B'>]\n3.2.11 Class instances\nA class instance is created by calling a class object (see above). A class instance has a namespace implemented as a\ndictionary which is the first place in which attribute references are searched."
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Python 继承和多重继承怎么用？",
+    "answer_texts": [
+      ", int) is True since bool is a subclass\nof int. However, issubclass(float, int) is False since float is not a subclass of int.\n9.5.1 Multiple Inheritance\nPython supports a form of multiple inheritance as well. A class definition with multiple base classes looks like this:\nclass DerivedClassName(Base",
+      "m object, so any case of multiple inheritance provides more than one path to reach\nobject. To keep the base classes from being accessed more than once, the dynamic algorithm linearizes the search\norder in a way that preserves the left-to-right ordering specified in each class, that calls each parent",
+      "at don’t inherit from a class but are still recognized by isinstance() and\nissubclass(); see the abc module documentation. Python comes with many built-in ABCs for data struc-\ntures (in the collections.abc module), numbers (in the numbers module), streams (in the io module),\nimport finders and loade"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "私有变量和名称改写机制？",
+    "answer_texts": [
+      "ling specifications for details and special cases.\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For\nexample:\n9.6. Private Variables\n81\n\nPython Tutorial, Release 3.14.0rc3\nclass Mapping:\ndef __init__(self, iterable):\nself.items_list = []\ns",
+      "ritance. For\nmore detail, see python_2.3_mro.\n9.6 Private Variables\n“Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. However, there\nis a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be\n",
+      "ass and _MappingSubclass__update in the\nMappingSubclass class respectively.\nNote that the mangling rules are designed mostly to avoid accidents; it still is possible to access or modify a variable\nthat is considered private. This can even be useful in special circumstances, such as in the debugger.\n"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "迭代器协议是什么？",
+    "answer_texts": [
+      "ntainer object. The function returns an iterator object that\ndefines the method __next__() which accesses elements in the container one at a time. When there are no more\nelements, __next__() raises a StopIteration exception which tells the for loop to terminate. You can call the\n__next__() method us",
+      " call the\n__next__() method using the next() built-in function; this example shows how it all works:\n>>> s = 'abc'\n>>> it = iter(s)\n>>> it\n<str_iterator object at 0x10c90e650>\n>>> next(it)\n'a'\n>>> next(it)\n'b'\n>>> next(it)\n'c'\n>>> next(it)\nTraceback (most recent call last):\nFile \"<stdin>\", line 1, i",
+      "st):\nFile \"<stdin>\", line 1, in <module>\nnext(it)\nStopIteration\nHaving seen the mechanics behind the iterator protocol, it is easy to add iterator behavior to your classes. Define an\n__iter__() method which returns an object with a __next__() method. If the class defines __next__(), then\n__iter__() ",
+      "s __next__(), then\n__iter__() can just return self:\nclass Reverse:\n\"\"\"Iterator for looping over a sequence backwards.\"\"\"\ndef __init__(self, data):\nself.data = data\nself.index = len(data)\ndef __iter__(self):\nreturn self\ndef __next__(self):\nif self.index == 0:\nraise StopIteration\nself.index = self.ind"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "生成器函数怎么写？",
+    "answer_texts": [
+      "n rev:\nprint(char)\nm\na\np\ns\n9.9 Generators\nGenerators are a simple and powerful tool for creating iterators. They are written like regular functions but use the\nyield statement whenever they want to return data. Each time next() is called on it, the generator resumes where\nit left off (it remembers a",
+      "erator = echo(1)\n>>> print(next(generator))\nExecution starts when 'next()' is called for the first time.\n1\n>>> print(next(generator))\nNone\n>>> print(generator.send(2))\n2\n>>> generator.throw(TypeError, \"spam\")\nTypeError('spam',)\n>>> generator.close()\nDon't forget to clean up when 'close()' is called.",
+      "re\nit left off (it remembers all the data values and which statement was last executed). An example shows that generators\ncan be trivially easy to create:\ndef reverse(data):\nfor index in range(len(data)-1, -1, -1):\nyield data[index]\n>>> for char in reverse('golf'):\nprint(char)\nf\nl\no\ng\nAnything that "
+    ]
+  },
+  {
+    "id": 33,
+    "question": "with 上下文管理器怎么用？",
+    "answer_texts": [
+      "ment with one “item” proceeds as follows:\n1. The context expression (the expression given in the with_item) is evaluated to obtain a context manager.\n2. The context manager’s __enter__() is loaded for later use.\n3. The context manager’s __exit__() is loaded for later use.\n4. The context manager’s __",
+      "ntime context for the execution of the\nblock of code. Context managers are normally invoked using the with statement (described in section The with\nstatement), but can also be used by directly invoking their methods.\nTypical uses of context managers include saving and restoring various kinds of glob",
+      " a simplified syntax suitable for editing by end-users.\nThis allows users to customize their applications without having to alter the application.\nThe format uses placeholder names formed by $ with valid Python identifiers (alphanumeric characters and under-\nscores). Surrounding the placeholder with"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "os 模块有哪些常用功能？",
+    "answer_texts": [
+      "ath based finder, 80, 173\npath entry, 173\npath entry finder, 173\npath entry hook, 173\npath hooks, 75\npath-like object, 173\npattern matching, 123\nPEP, 173\nphysical line, 7, 8, 13\nplus, 97\npopen() (in module os), 35\nportion, 174\npackage, 74\npositional argument, 174\npow\nbuilt-in function, 57, 58\npower\n",
+      " os module provides dozens of functions for interacting with the operating system:\n>>> import os\n>>> os.getcwd()\n# Return the current working directory\n'C:\\\\Python314'\n>>> os.chdir('/server/accesslogs')\n# Change current working directory\n>>> os.system('mkdir today')\n# Run the command mkdir in the sy",
+      "tive aids for working with large modules like os:\n>>> import os\n>>> dir(os)\n<returns a list of all module functions>\n>>> help(os)\n<returns an extensive manual page created from the module's docstrings>\nFor daily file and directory management tasks, the shutil module provides a higher level interface"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "sys.argv 怎么获取命令行参数？",
+    "answer_texts": [
+      "te as a list. For instance, let’s take the following demo.py file:\n87\n\nPython Tutorial, Release 3.14.0rc3\n# File demo.py\nimport sys\nprint(sys.argv)\nHere is the output from running python demo.py one two three at the command line:\n['demo.py', 'one', 'two', 'three']\nThe argparse module provides a more",
+      "port sys\nfib(int(sys.argv[1]))\nyou can make the file usable as a script as well as an importable module, because the code that parses the command\nline only runs if the module is executed as the “main” file:\n$ python fibo.py 50\n0 1 1 2 3 5 8 13 21 34\nIf the module is imported, the code is not run:\n>>",
+      "cripts\nWhen you run a Python module with\npython fibo.py <arguments>\nthe code in the module will be executed, just as if you imported it, but with the __name__ set to \"__main__\". That\nmeans that by adding this code at the end of your module:\nif __name__ == \"__main__\":\nimport sys\nfib(int(sys.argv[1]))"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "datetime 模块怎么表示日期？",
+    "answer_texts": [
+      "lue:{width}.{precision}}\"\n# nested fields\n'result:\n12.35'\n>>> today = datetime(year=2017, month=1, day=27)\n>>> f\"{today:%B %d, %Y}\"\n# using date format specifier\n'January 27, 2017'\n>>> f\"{today=:%B %d, %Y}\" # using date format specifier and debugging\n'today=January 27, 2017'\n>>> number = 1024\n>>> f\"",
+      "one aware.\n>>> # dates are easily constructed and formatted\n>>> from datetime import date\n>>> now = date.today()\n>>> now\ndatetime.date(2003, 12, 2)\n>>> now.strftime(\"%m-%d-%y. %d %b %Y is a %A on the %d day of %B.\")\n'12-02-03. 02 Dec 2003 is a Tuesday on the 02 day of December.'\n>>> # dates support ",
+      "> server.sendmail('soothsayer@example.org', 'jcaesar@example.org',\n>>> server.quit()\n(Note that the second example needs a mailserver running on localhost.)\n10.7. Internet Access\n89\n\nPython Tutorial, Release 3.14.0rc3\n10.8 Dates and Times\nThe datetime module supplies classes for manipulating dates a"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "random 模块有哪些常用函数？",
+    "answer_texts": [
+      "ying the random module includes code based on a download from http://www.math.\nsci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html. The following are the verbatim comments from the\noriginal code:\nA C-program for MT19937, with initialization improved 2002/1/26.\nCoded by Takuji Nishimura and Makoto",
+      "access to the underlying C library functions for floating-point math:\n88\nChapter 10. Brief Tour of the Standard Library\n\nPython Tutorial, Release 3.14.0rc3\n>>> import math\n>>> math.cos(math.pi / 4)\n0.70710678118654757\n>>> math.log(1024, 2)\n10.0\nThe random module provides tools for making random sele",
+      ".0, 1.0)\n0.17970987693706186\n>>> random.randrange(6)\n# random integer chosen from range(6)\n4\nThe statistics module calculates basic statistical properties (the mean, median, variance, etc.) of numeric data:\n>>> import statistics\n>>> data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]\n>>> statistics.mean"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "logging 怎么记录日志？",
+    "answer_texts": [
+      "sage priority: DEBUG, INFO, WARNING, ERROR, and CRITICAL.\nThe logging system can be configured directly from Python or can be loaded from a user editable configuration file\nfor customized logging without altering the application.\n11.6 Weak References\nPython does automatic memory management (referenc",
+      "ing\nThe logging module offers a full featured and flexible logging system. At its simplest, log messages are sent to a\nfile or to sys.stderr:\nimport logging\nlogging.debug('Debugging information')\nlogging.info('Informational message')\nlogging.warning('Warning:config file %s not found', 'server.conf')",
+      "d:\n>>> def initlog(*args):\npass\n# Remember to implement this!\nas a placeholder body as well. See bltin-ellipsis-object.\n20\nChapter 4. More Control Flow Tools\n\nPython Tutorial, Release 3.14.0rc3\n4.7 match Statements\nA match statement takes an expression and compares its value to successive patterns g"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "如何使用 venv 创建虚拟环境？",
+    "answer_texts": [
+      " a copy\nof the Python interpreter and various supporting files.\nA common directory location for a virtual environment is .venv. This name keeps the directory typically hidden\nin your shell and thus out of the way while giving it a name that explains why the directory exists. It also prevents\nclashin",
+      "al environment, decide upon a directory where you want to place it, and run the venv module as a\nscript with the directory path:\npython -m venv tutorial-env\nThis will create the tutorial-env directory if it doesn’t exist, and also create directories inside it containing a copy\nof the Python interpre",
+      "ule used to create and manage virtual environments is called venv. venv will install the Python version\nfrom which the command was run (as reported by the --version option). For instance, executing the command\nwith python3.12 will install version 3.12.\nTo create a virtual environment, decide upon a "
+    ]
+  },
+  {
+    "id": 41,
+    "question": "pip 常用命令有哪些？",
+    "answer_texts": [
+      " called pip. By default pip will install packages from\nthe Python Package Index. You can browse the Python Package Index by going to it in your web browser.\npip has a number of subcommands: “install”, “uninstall”, “freeze”, etc. (Consult the installing-index guide for\ncomplete documentation for pip.",
+      "-env) $ python -m pip list\nnovas (3.1.1.3)\nnumpy (1.9.2)\npip (7.0.3)\nrequests (2.7.0)\nsetuptools (16.0)\npython -m pip freeze will produce a similar list of the installed packages, but the output uses the format that\npython -m pip install expects. A common convention is to put this list in a requirem",
+      "ilt-in function, 57, 58\npower\noperation, 97\nprecedence\noperator, 104\nprimary, 93\nprint\nbuilt-in function, 43\nprint() (built-in function)\n__str__() (object method), 43\nprivate\nnames, 85\nprocedure\ncall, 105\nprogram, 141\nprovisional API, 174\nprovisional package, 174\nPython 3000, 174\nPython Enhancement "
+    ]
+  },
+  {
+    "id": 42,
+    "question": "lambda 匿名函数怎么写？",
+    "answer_texts": [
+      "conditional expressions.\n6.14 Lambdas\nlambda_expr: \"lambda\" [parameter_list] \":\" expression\nLambda expressions (sometimes called lambda forms) are used to create anonymous functions. The expression\nlambda parameters: expression yields a function object. The unnamed object behaves like a function obj",
+      " the form “*identifier” may have an annotation “: *expression”. See\nPEP 646.\nIt is also possible to create anonymous functions (functions not bound to a name), for immediate use in expressions.\nThis uses lambda expressions, described in section Lambdas. Note that the lambda expression is merely a sh",
+      "ambda\nAn anonymous inline function consisting of a single expression which is evaluated when the function is called.\nThe syntax to create a lambda function is lambda [parameters]: expression\nLBYL\nLook before you leap. This coding style explicitly tests for pre-conditions before making calls or looku"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "闭包是什么？",
+    "answer_texts": [
+      "l variables that\nare referenced from at least one nested scope inside the\nfunction\ncodeobject.co_freevars\nA tuple containing the names of free (closure) vari-\nables that a nested scope references in an outer scope.\nSee also function.__closure__.\nNote: references to global and builtin names are not i"
+    ]
+  },
+  {
+    "id": 44,
+    "question": "装饰器是什么？",
+    "answer_texts": [
+      "ied as a function transformation using the @wrapper syntax.\nCommon examples for decorators are classmethod() and staticmethod().\nThe decorator syntax is merely syntactic sugar, the following two function definitions are semantically equiv-\nalent:\ndef f(arg):\nf = staticmethod(f)\n@staticmethod\ndef f(a",
+      "ethod(f)\n@staticmethod\ndef f(arg):\nThe same concept exists for classes, but is less commonly used there. See the documentation for function\ndefinitions and class definitions for more about decorators.\ndescriptor\nAny object which defines the methods __get__(), __set__(), or __delete__(). When a class"
+    ]
+  },
+  {
+    "id": 45,
+    "question": "assert 语句的用途？",
+    "answer_texts": [
+      "nt, 112\nkeyword, 112, 119, 122, 123\nmatch statement, 123\nwith statement, 122\nAS pattern, OR pattern, capture pattern,\nwildcard pattern, 125\nASCII, 12\nasend() (agen method), 93\nassert\nstatement, 108\nAssertionError\nexception, 109\nassertions\ndebugging, 108\nassignment\nannotated, 108\nattribute, 105, 106\n",
+      "ations are never evaluated.\n7.3 The assert statement\nAssert statements are a convenient way to insert debugging assertions into a program:\nassert_stmt: \"assert\" expression [\",\" expression]\nThe simple form, assert expression, is equivalent to\n108\nChapter 7. Simple statements\n\nThe Python Language Refe",
+      "ck to testing the expression.\n8.3 The for statement\nThe for statement is used to iterate over the elements of a sequence (such as a string, tuple or list) or other iterable\nobject:\nfor_stmt: \"for\" target_list \"in\" starred_expression_list \":\" suite\n[\"else\" \":\" suite]\nThe starred_expression_list expre"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "del 语句删除变量？",
+    "answer_texts": [
+      "4.5]\n>>> del a[:]\n>>> a\n[]\ndel can also be used to delete entire variables:\n>>> del a\nReferencing the name a hereafter is an error (at least until another value is assigned to it). We’ll find other uses for\ndel later.\n5.3 Tuples and Sequences\nWe saw that lists and strings have many common properties",
+      "acking Argument Lists for details on the asterisk in this line.\n5.2 The del statement\nThere is a way to remove an item from a list given its index instead of its value: the del statement. This differs from\nthe pop() method which returns a value. The del statement can also be used to remove slices fr",
+      "__del__().\n• __del__() can be executed during interpreter shutdown. As a consequence, the global variables\nit needs to access (including other modules) may already have been deleted or set to None. Python\nguarantees that globals whose name begins with a single underscore are deleted from their modul"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "type 和 isinstance 的区别？",
+    "answer_texts": [
+      "nce of the builtin type , raise TypeError.\n2. If the subject value is not an instance of name_or_attr (tested via isinstance()), the class pattern fails.\n3. If no pattern arguments are present, the pattern succeeds. Otherwise, the subsequent steps depend on whether\nkeyword or positional argument pat",
+      ")\nPython has two built-in functions that work with inheritance:\n• Use isinstance() to check an instance’s type: isinstance(obj, int) will be True only if obj.\n__class__ is int or some class derived from int.\n• Use issubclass() to check class inheritance: issubclass(bool, int) is True since bool is a",
+      "e instance is itself a class.\nµ See also\nPEP 3119 - Introducing Abstract Base Classes\nIncludes the specification for customizing isinstance() and issubclass() behavior through\n__instancecheck__() and __subclasscheck__(), with motivation for this functionality in the con-\ntext of adding Abstract Base"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "可变类型和不可变类型？",
+    "answer_texts": [
+      "Like its identity, an object’s type is also unchangeable.1\nThe value of some objects can change. Objects whose value can change are said to be mutable; objects whose value is\nunchangeable once they are created are called immutable. (The value of an immutable container object that contains\na referenc",
+      "bility:\n3.2. The standard type hierarchy\n25\n\nThe Python Language Reference, Release 3.14.0rc3\nImmutable sequences\nAn object of an immutable sequence type cannot change once it is created. (If the object contains references to\nother objects, these other objects may be mutable and may be changed; howe",
+      "n unchangeable value, it is more subtle.) An object’s mutability is determined by its type; for instance,\nnumbers, strings and tuples are immutable, while dictionaries and lists are mutable.\nObjects are never explicitly destroyed; however, when they become unreachable they may be garbage-collected. "
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Python 标识符命名规则？",
+    "answer_texts": [
+      " a legal token, when read from left to right.\n2.3 Names (identifiers and keywords)\nNAME tokens represent identifiers, keywords, and soft keywords.\nWithin the ASCII range (U+0001..U+007F), the valid characters for names include the uppercase and lowercase\nletters (A-Z and a-z), the underscore _ and, ",
+      "d a-z), the underscore _ and, except for the first character, the digits 0 through 9.\nNames must contain at least one character, but have no upper length limit. Case is significant.\nBesides A-Z, a-z, _ and 0-9, names can also use “letter-like” and “number-like” characters from outside the ASCII\nrang"
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Python 有哪些关键字？",
+    "answer_texts": [
+      "th double quotes (\") denote SOFT KEYWORDS\n# * Strings with single quotes (') denote KEYWORDS\n# * Upper case names (NAME) denote tokens in the Grammar/Tokens file\n# * Rule names starting with \"invalid_\" are used for specialized syntax errors\n#\n- These rules are NOT used in the first pass of the parse"
+    ]
+  }
+]

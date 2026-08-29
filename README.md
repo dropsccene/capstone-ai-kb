@@ -7,7 +7,8 @@
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.139-green)](https://fastapi.tiangolo.com/)
 [![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek_V4-orange)](https://platform.deepseek.com/)
-[![tests](https://img.shields.io/badge/tests-13/13_passed-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-22/22_passed-brightgreen)]()
+[![RAG](https://img.shields.io/badge/RAG_hit@3-0.79-purple)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)]()
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://capstone-ai-kb.onrender.com/docs)
 [![Blog](https://img.shields.io/badge/掘金-手写RAG管线的5个设计决策-blue)](https://juejin.cn/post/7665944296248442906)
@@ -24,7 +25,6 @@
 
 ## 为什么这个项目不一样
 
-
 > 大多数 RAG 项目 = LangChain 3 行调包 + 截图 + 没有测试。这个项目 ≠。
 
 | 别人 | 这个项目 |
@@ -32,7 +32,7 @@
 | LangChain 黑盒封装 | **手写 ReAct 循环**：tool_map → call_tool → run，每步可调试 |
 | 没有 Agent | **NL2SQL + RAG 双引擎**：自然语言查数据库 + 自然语言查文档 |
 | 没有认证 | **JWT + bcrypt + OAuth2PasswordBearer**，接口级鉴权 |
-| 没有测试 | **13 条 pytest 全绿**，Mock LLM + VectorStore，零网络零费用 |
+| 没有测试 | **22 条 pytest 全绿**，Mock LLM + VectorStore，零网络零费用 |
 | 本地跑一下截个图 | **Docker Compose 一键部署**，PostgreSQL + FastAPI 双容器 + 自动迁移 |
 | 技术选型靠"教程说的" | **8 个设计决策文档**，每个写了为什么、什么时候换 |
 
@@ -41,7 +41,8 @@
 | 模块 | 功能 |
 |------|------|
 | 🧠 **NL2SQL Agent** | 自然语言查数据库——ReAct 循环 + Function Calling，自动生成 SQL → 执行 → 纠错 → 返回结果 |
-| 📄 **RAG 文档问答** | PDF 上传 → 切片 → 硅基流动 BGE-M3 向量化 → ChromaDB 持久化 → 语义检索 → 流式生成 |
+| 📄 **RAG 文档问答** | PDF 上传 → 切片 → 硅基流动 BGE-M3 向量化 → ChromaDB 持久化 → 混合检索 → 流式生成 |
+| 🔀 **混合检索 + CJK 路由** | 中文 query → 纯向量检索（BM25 字符级分词对中文是死重）；英文 query → BM25 + RRF 混合检索 |
 | ⚡ **SSE 流式推送** | StreamingResponse 逐 token 实时返回，第一个字即刻出现 |
 | 📎 **引用来源** | 每个回答附带检索到的原文片段，可溯源验证 |
 | 🔐 **JWT 认证** | bcrypt 密码哈希 + JWT 签发/验证 + OAuth2PasswordBearer，/me 鉴权 |
@@ -50,12 +51,51 @@
 
 ---
 
+## RAG 检索指标
+
+> 语料：Python 3.14 官方文档（tutorial 1,314 + reference 2,027 = 3,341 chunks，PyMuPDF 提取，300/30 切片）
+>
+> 评测集：42 条中文真值问题
+
+| 指标 | 值 |
+|------|-----|
+| **hit@3** | **0.79** |
+| hit@5 | 0.83 |
+| hit@10 | 0.90 |
+
+### 提分路径
+
+1. **CJK 路由**：中文 query 跳过 BM25（字符级分词对中文是死重），走纯向量；英文 query 走 BM25 + RRF 混合检索
+2. **词典条目标注补全**：补充遗漏的标注
+3. **rerank 下线**：bge-reranker-v2-m3 五连负优化（0.74 → 0.55），用数据否决自己，生产已下线
+
+### 面试金句
+
+- **Recall@K 分母陷阱**：chunk 粒度变 → 标注粒度变，跨实验比 recall 骗人，hit@K 才公平
+- **用数据否决自己的 rerank**：连续 5 次实验证明 rerank 负优化，不是"没试过所以不用"
+- **混合检索的适用域**：跨语言场景下 BM25 是死重，不是所有场景都该混合
+
+---
+
+## 缺陷修复（6 项全完成）
+
+| # | 问题 | 修复 |
+|---|------|------|
+| 1 | NUL 字符入库导致 500 | `clean_extracted_text` 清洗 |
+| 2 | 无创建知识库端点 | 新增 `app/routers/knowledge_bases.py`（POST/GET） |
+| 3 | SQLite/PG 外键不一致 | `PRAGMA foreign_keys=ON` |
+| 4 | **PyPDF2 词间距粘连** | **换 PyMuPDF**（根治，fitz 提取保留 LaTeX 词间距） |
+| 5 | TOC 目录行污染检索 | 点线形态行过滤（227→2） |
+| 6 | compose 无数据卷、重建丢 Chroma | `./data:/app/data` 持久化 |
+
+---
+
 ## 项目结构
 
 ```
 capstone-ai-kb/
 ├── app/
-│   ├── main.py              # FastAPI 入口 + lifespan + 注册 4 个 router
+│   ├── main.py              # FastAPI 入口 + lifespan + 注册 router
 │   ├── config.py            # pydantic-settings 配置（DB / LLM / SECRET_KEY）
 │   ├── database.py          # engine + SessionLocal + get_db（try/yield/finally）
 │   ├── models.py            # ORM（User / KnowledgeBase / Document / Chunk）
@@ -63,19 +103,29 @@ capstone-ai-kb/
 │   ├── auth.py              # get_current_user（OAuth2 + jwt.decode + db query）
 │   ├── llm.py               # LLM 调用封装（call_llm + call_llm_stream）
 │   ├── agent.py             # ReActAgent 类（tool_map + call_tool + run 循环）
-│   ├── vector_store.py      # ChromaDB 向量存储 + 硅基流动 BGE-M3 Embedding API
+│   ├── vector_store.py      # ChromaDB + BGE-M3 Embedding + hybrid_query（CJK 路由）
 │   ├── rate_limit.py         # Redis 限流（滑动窗口），Redis 不可用时自动放行
 │   └── routers/
-│       ├── documents.py     # POST /upload（PDF→文本→切片→Embedding→入库）
+│       ├── documents.py     # POST /upload（PDF→文本→切片→Embedding→入库，PyMuPDF 提取）
 │       ├── asks.py          # POST /ask + /ask-stream（RAG 问答，非流式+SSE流式）
 │       ├── auth.py          # POST /register + /login + GET /me（JWT 认证）
-│       └── agent.py         # POST /ask-database（NL2SQL ReAct Agent）
+│       ├── agent.py         # POST /ask-database（NL2SQL ReAct Agent）
+│       └── knowledge_bases.py # POST/GET /knowledge-bases（知识库 CRUD）
 ├── tests/
 │   ├── conftest.py          # pytest fixture + TestClient + create_test_token
 │   ├── test_upload.py       # 3 条（上传 PDF / 非 PDF / chunk 计数）
-│   ├── test_ask.py          # 1 条（RAG 问答 mock LLM + VectorStore）
+│   ├── test_ask.py          # 3 条（RAG 问答 mock LLM + VectorStore）
 │   ├── test_auth.py         # 7 条（注册/重复/弱密码/登录错密/登录/me/未授权）
-│   └── test_agent.py        # 2 条（查数据库 / 缺参数 422）
+│   ├── test_agent.py        # 7 条（NL2SQL 查询 / 缺参数 / 多轮对话）
+│   └── test_rate_limit.py   # 2 条（限流逻辑）
+├── evaluation/              # RAG 评测工具链
+│   ├── ground_truth.json    # 42 条真值测试集
+│   ├── evaluate.py          # 主评测脚本
+│   ├── hit_at_k.py          # hit@K 计算
+│   ├── evaluate_rerank.py   # rerank 对比实验
+│   ├── vector_vs_rrf.py     # 纯向量 vs RRF 混合对比
+│   ├── diagnose_misses.py   # miss case 诊断
+│   └── ...
 ├── alembic/                 # 数据库迁移（替代 create_all）
 ├── alembic.ini
 ├── Dockerfile               # 分层缓存 + ENTRYPOINT
@@ -94,7 +144,7 @@ capstone-ai-kb/
 ### 本地运行（SQLite，零配置）
 
 ```bash
-git clone https://github.com/dropsccene/capstone-ai-kb.git
+git clone https://github.com/Zeming-Yuan/capstone-ai-kb.git
 cd capstone-ai-kb
 
 python -m venv venv
@@ -147,6 +197,8 @@ docker compose up -d   # PostgreSQL 16 + FastAPI，自动 Alembic 迁移
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
+| POST | /knowledge-bases | 创建知识库 |
+| GET | /knowledge-bases | 获取知识库列表 |
 | POST | /knowledge-bases/{kb_id}/upload | 上传 PDF → 切片 → 向量化 → 入库 |
 | POST | /knowledge-bases/{kb_id}/ask | RAG 问答（非流式，返回 JSON） |
 | POST | /knowledge-bases/{kb_id}/ask-stream | RAG 问答（SSE 流式，逐字返回） |
@@ -170,16 +222,16 @@ docker compose up -d   # PostgreSQL 16 + FastAPI，自动 Alembic 迁移
 ## 测试
 
 ```bash
-pytest -v   # 13 passed, 0 failed
+pytest -v   # 22 passed, 0 failed
 ```
 
 | 文件 | 条数 | 覆盖 |
 |------|------|------|
-| test_auth.py | 7 | register / 重复注册 / 登录错密码 / 登录 / me / 未授权 |
+| test_auth.py | 7 | register / 重复注册 / 弱密码 / 登录错密码 / 登录 / me / 未授权 |
+| test_agent.py | 7 | NL2SQL 查询 / 缺参数 422 / 多轮对话 / 异常处理 |
+| test_ask.py | 3 | RAG 问答（mock LLM + VectorStore） |
 | test_upload.py | 3 | 上传 PDF / 非 PDF 422 / chunk 计数 |
-| test_agent.py | 2 | NL2SQL 查询 / 缺参数 422 |
-| test_rate_limit.py | — | 限流逻辑（滑动窗口） |
-| test_ask.py | 1 | RAG 问答（mock LLM + VectorStore） |
+| test_rate_limit.py | 2 | 限流逻辑（滑动窗口） |
 
 Mock 策略：LLM 调用、VectorStore 全部 mock，0 网络请求、0 API 费用。
 
@@ -197,11 +249,11 @@ Mock 策略：LLM 调用、VectorStore 全部 mock，0 网络请求、0 API 费�
 | 向量库 | ChromaDB（PersistentClient） | 按 kb_id 隔离 collection |
 | Embedding | 硅基流动 BGE-M3 API | 1024 维，多语言（中英），API 免本地模型 |
 | LLM | DeepSeek V4 Flash | openai SDK，同步 + 流式 SSE |
-| PDF | PyPDF2 3.0 | PdfReader(BytesIO(raw)) |
+| PDF | **PyMuPDF 1.26** | fitz 提取，保留 LaTeX 词间距（替代 PyPDF2） |
 | Agent | ReAct + Function Calling | 自然语言 → SQL → 执行 → 返回 |
 | 重试 | tenacity | @retry 装饰器，指数退避 |
 | 校验 | Pydantic v2 + pydantic-settings | BaseSettings 读 .env |
-| 测试 | pytest 9.1 | 13 条全绿 + unittest.mock |
+| 测试 | pytest 9.1 | 22 条全绿 + unittest.mock |
 | 容器 | Docker Compose | PostgreSQL + FastAPI + auto-migrate |
 
 ---
@@ -249,6 +301,14 @@ MVP 默认 SQLite 是因为零配置——不需要装数据库、不需要启�
 ### Alembic 替代 create_all
 
 项目初期用 Base.metadata.create_all() 快速启动——lifespan 里一行建表，零配置。切 Alembic 后支持版本化迁移：每次改模型生成迁移文件，可回滚、可追溯、可团队协作。docker-entrypoint.sh 在容器启动时自动跑 alembic upgrade head，本地开发手动跑。选型逻辑：MVP 阶段 create_all 够快，上生产必须 Alembic——数据库 schema 变更没有版本控制就是定时炸弹。
+
+### CJK 路由：为什么中文 query 跳过 BM25
+
+BM25 依赖分词器做词级切分——英文空格天然分词，效果好。但中文没有空格，字符级切分后每个字都是一个 token，"退款流程"变成"退""款""流""程"四个独立 term，检索时要么匹配一堆无关字符，要么完全匹配不上。实测数据：中文 query 走 BM25+RRF 混合检索的 hit@3 = 0.74，跳过 BM25 走纯向量的 hit@3 = 0.79。结论：混合检索不是万能的，跨语言场景下 BM25 是死重，用数据说话。
+
+### rerank 为什么下线
+
+bge-reranker-v2-m3 五连负优化：同一评测集、同一基线（RRF hit@3=0.74），加 rerank 后 hit@3 降到 0.55。原因：reranker 对短 chunk（300 字）的细粒度语义区分能力不足，反而引入噪声。不是"没试过所以不用"，是"试了五次，每次都是负优化，用数据否决自己"。代码注释保留了判决数据，面试时能讲清楚实验过程。
 
 ---
 

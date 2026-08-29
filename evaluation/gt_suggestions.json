@@ -1,0 +1,711 @@
+[
+  {
+    "id": 1,
+    "question": "如何启动 Python 解释器并退出交互模式？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_1602",
+      "chunk_8_990",
+      "chunk_8_869"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 2,
+    "question": "Python 中字符串有哪些字面量写法？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_123",
+      "chunk_9_2023",
+      "chunk_9_1995"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 3,
+    "question": "f-string 格式化字符串怎么用？",
+    "keywords": [
+      "string"
+    ],
+    "suggested": [
+      "chunk_9_128",
+      "chunk_9_1482",
+      "chunk_9_1485"
+    ],
+    "sigA": [
+      "chunk_9_2023",
+      "chunk_9_2022",
+      "chunk_9_2021"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "赋值语句和表达式求值顺序？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_1071",
+      "chunk_9_866",
+      "chunk_9_1063"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 5,
+    "question": "if / elif / else 的语法结构？",
+    "keywords": [
+      "if",
+      "elif",
+      "else"
+    ],
+    "suggested": [
+      "chunk_9_1971",
+      "chunk_9_1448",
+      "chunk_9_1209"
+    ],
+    "sigA": [
+      "chunk_9_1987",
+      "chunk_9_1971",
+      "chunk_9_1448"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "for 循环如何遍历字典？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_121",
+      "chunk_8_673",
+      "chunk_9_1213"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 7,
+    "question": "range 函数的三个参数含义？",
+    "keywords": [
+      "range"
+    ],
+    "suggested": [
+      "chunk_8_224",
+      "chunk_8_125",
+      "chunk_9_855"
+    ],
+    "sigA": [
+      "chunk_9_2010",
+      "chunk_9_2009",
+      "chunk_9_1972"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "break 和 continue 的区别？",
+    "keywords": [
+      "break",
+      "continue"
+    ],
+    "suggested": [
+      "chunk_9_1154",
+      "chunk_9_1212",
+      "chunk_9_1153"
+    ],
+    "sigA": [
+      "chunk_9_1434",
+      "chunk_9_1431",
+      "chunk_9_1247"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "match 语句支持哪些模式匹配？",
+    "keywords": [
+      "match"
+    ],
+    "suggested": [
+      "chunk_9_1259",
+      "chunk_9_1322",
+      "chunk_9_1291"
+    ],
+    "sigA": [
+      "chunk_9_2015",
+      "chunk_9_2003",
+      "chunk_9_1999"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "函数定义时如何设置默认参数？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_1338",
+      "chunk_9_1339",
+      "chunk_9_1388"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 11,
+    "question": "*args 和 **kwargs 是什么？",
+    "keywords": [
+      "args",
+      "kwargs"
+    ],
+    "suggested": [
+      "chunk_9_1654",
+      "chunk_9_1653",
+      "chunk_9_1490"
+    ],
+    "sigA": [
+      "chunk_9_1654",
+      "chunk_9_1653",
+      "chunk_9_1490"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "列表推导式怎么写？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_281",
+      "chunk_8_250",
+      "chunk_9_1214"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 13,
+    "question": "字典推导式怎么写？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_309",
+      "chunk_8_308",
+      "chunk_8_941"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 14,
+    "question": "元组和列表有什么区别？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_535",
+      "chunk_8_290",
+      "chunk_8_763"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 15,
+    "question": "集合有哪些常用操作？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_971",
+      "chunk_9_231",
+      "chunk_9_539"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 16,
+    "question": "import 语句有哪几种形式？",
+    "keywords": [
+      "import"
+    ],
+    "suggested": [
+      "chunk_9_1984",
+      "chunk_9_814",
+      "chunk_9_684"
+    ],
+    "sigA": [
+      "chunk_9_2019",
+      "chunk_9_2015",
+      "chunk_9_2010"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Python 模块搜索路径有哪些？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_707",
+      "chunk_9_788",
+      "chunk_8_1307"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 18,
+    "question": "包和相对导入怎么用？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_412",
+      "chunk_9_1171",
+      "chunk_8_414"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 19,
+    "question": "字符串有哪些格式化方法？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_1073",
+      "chunk_8_438",
+      "chunk_8_446"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 20,
+    "question": "如何读写文本文件？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_456",
+      "chunk_8_468",
+      "chunk_8_482"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 21,
+    "question": "json 模块怎么用？",
+    "keywords": [
+      "json"
+    ],
+    "suggested": [
+      "chunk_8_1304",
+      "chunk_8_722",
+      "chunk_8_484"
+    ],
+    "sigA": [
+      "chunk_8_1306",
+      "chunk_8_1304",
+      "chunk_8_722"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "pickle 和 json 有什么区别？",
+    "keywords": [
+      "pickle",
+      "json"
+    ],
+    "suggested": [
+      "chunk_8_484",
+      "chunk_8_1304",
+      "chunk_8_485"
+    ],
+    "sigA": [
+      "chunk_8_484",
+      "chunk_8_1306",
+      "chunk_8_1304"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "try except 怎么捕获多个异常？",
+    "keywords": [
+      "try",
+      "except"
+    ],
+    "suggested": [
+      "chunk_9_1563",
+      "chunk_8_548",
+      "chunk_8_500"
+    ],
+    "sigA": [
+      "chunk_9_1563",
+      "chunk_9_1451",
+      "chunk_9_1373"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "如何自定义异常类？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_527",
+      "chunk_9_1141",
+      "chunk_9_604"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 25,
+    "question": "raise 语句的用法？",
+    "keywords": [
+      "raise"
+    ],
+    "suggested": [
+      "chunk_9_1138",
+      "chunk_9_1434",
+      "chunk_9_1139"
+    ],
+    "sigA": [
+      "chunk_9_2015",
+      "chunk_9_2010",
+      "chunk_9_2009"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "finally 子句的作用？",
+    "keywords": [
+      "finally"
+    ],
+    "suggested": [
+      "chunk_9_1246",
+      "chunk_8_539",
+      "chunk_8_531"
+    ],
+    "sigA": [
+      "chunk_9_1987",
+      "chunk_9_1977",
+      "chunk_9_1453"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "如何定义类？类对象和实例对象的关系？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_504",
+      "chunk_8_623",
+      "chunk_9_320"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 28,
+    "question": "Python 继承和多重继承怎么用？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_653",
+      "chunk_8_658",
+      "chunk_9_1502"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 29,
+    "question": "私有变量和名称改写机制？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_664",
+      "chunk_8_660",
+      "chunk_8_667"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 30,
+    "question": "迭代器协议是什么？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_714",
+      "chunk_8_1049",
+      "chunk_9_1664"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 31,
+    "question": "生成器函数怎么写？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_680",
+      "chunk_9_910",
+      "chunk_8_681"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 32,
+    "question": "yield 和 return 有什么区别？",
+    "keywords": [
+      "yield",
+      "return"
+    ],
+    "suggested": [
+      "chunk_9_916",
+      "chunk_9_886",
+      "chunk_9_1135"
+    ],
+    "sigA": [
+      "chunk_9_2015",
+      "chunk_9_1582",
+      "chunk_9_1514"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "with 上下文管理器怎么用？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_1250",
+      "chunk_9_583",
+      "chunk_8_733"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 34,
+    "question": "os 模块有哪些常用功能？",
+    "keywords": [
+      "os"
+    ],
+    "suggested": [
+      "chunk_9_2003",
+      "chunk_8_689",
+      "chunk_8_691"
+    ],
+    "sigA": [
+      "chunk_9_2005",
+      "chunk_9_2003",
+      "chunk_9_1964"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "pathlib 和 os.path 的区别？",
+    "keywords": [
+      "pathlib",
+      "os.path"
+    ],
+    "suggested": [
+      "chunk_9_1658",
+      "chunk_9_1657",
+      "chunk_8_1042"
+    ],
+    "sigA": [
+      "chunk_9_1658",
+      "chunk_9_1657",
+      "chunk_8_1042"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "sys.argv 怎么获取命令行参数？",
+    "keywords": [
+      "sys.argv"
+    ],
+    "suggested": [
+      "chunk_8_694",
+      "chunk_8_352",
+      "chunk_8_351"
+    ],
+    "sigA": [
+      "chunk_8_694",
+      "chunk_8_513",
+      "chunk_8_352"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "datetime 模块怎么表示日期？",
+    "keywords": [
+      "datetime"
+    ],
+    "suggested": [
+      "chunk_9_144",
+      "chunk_8_709",
+      "chunk_8_707"
+    ],
+    "sigA": [
+      "chunk_9_144",
+      "chunk_8_709",
+      "chunk_8_707"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "random 模块有哪些常用函数？",
+    "keywords": [
+      "random"
+    ],
+    "suggested": [
+      "chunk_9_1764",
+      "chunk_8_701",
+      "chunk_8_703"
+    ],
+    "sigA": [
+      "chunk_9_1764",
+      "chunk_9_1763",
+      "chunk_9_1640"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "logging 怎么记录日志？",
+    "keywords": [
+      "logging"
+    ],
+    "suggested": [
+      "chunk_8_755",
+      "chunk_8_752",
+      "chunk_8_143"
+    ],
+    "sigA": [
+      "chunk_9_1630",
+      "chunk_9_511",
+      "chunk_8_1015"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "如何使用 venv 创建虚拟环境？",
+    "keywords": [
+      "venv"
+    ],
+    "suggested": [
+      "chunk_8_784",
+      "chunk_8_783",
+      "chunk_8_782"
+    ],
+    "sigA": [
+      "chunk_9_1706",
+      "chunk_8_1090",
+      "chunk_8_784"
+    ]
+  },
+  {
+    "id": 41,
+    "question": "pip 常用命令有哪些？",
+    "keywords": [
+      "pip"
+    ],
+    "suggested": [
+      "chunk_8_789",
+      "chunk_8_797",
+      "chunk_9_2004"
+    ],
+    "sigA": [
+      "chunk_9_1568",
+      "chunk_8_953",
+      "chunk_8_811"
+    ]
+  },
+  {
+    "id": 42,
+    "question": "lambda 匿名函数怎么写？",
+    "keywords": [
+      "lambda"
+    ],
+    "suggested": [
+      "chunk_9_1064",
+      "chunk_9_1347",
+      "chunk_8_1004"
+    ],
+    "sigA": [
+      "chunk_9_1988",
+      "chunk_9_1978",
+      "chunk_9_1974"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "闭包是什么？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_243",
+      "chunk_9_755",
+      "chunk_8_973"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 44,
+    "question": "装饰器是什么？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_935",
+      "chunk_9_1550",
+      "chunk_9_180"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 45,
+    "question": "assert 语句的用途？",
+    "keywords": [
+      "assert"
+    ],
+    "suggested": [
+      "chunk_9_1949",
+      "chunk_9_1123",
+      "chunk_9_1213"
+    ],
+    "sigA": [
+      "chunk_9_2014",
+      "chunk_9_1972",
+      "chunk_9_1968"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "del 语句删除变量？",
+    "keywords": [
+      "del"
+    ],
+    "suggested": [
+      "chunk_8_284",
+      "chunk_8_282",
+      "chunk_9_396"
+    ],
+    "sigA": [
+      "chunk_9_2020",
+      "chunk_9_2019",
+      "chunk_9_2015"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "type 和 isinstance 的区别？",
+    "keywords": [
+      "type",
+      "isinstance"
+    ],
+    "suggested": [
+      "chunk_9_1316",
+      "chunk_8_652",
+      "chunk_9_516"
+    ],
+    "sigA": [
+      "chunk_9_1561",
+      "chunk_9_1316",
+      "chunk_9_514"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "可变类型和不可变类型？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_185",
+      "chunk_9_221",
+      "chunk_9_187"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 49,
+    "question": "Python 标识符命名规则？",
+    "keywords": [],
+    "suggested": [
+      "chunk_8_247",
+      "chunk_8_733",
+      "chunk_9_1458"
+    ],
+    "sigA": []
+  },
+  {
+    "id": 50,
+    "question": "Python 有哪些关键字？",
+    "keywords": [],
+    "suggested": [
+      "chunk_9_1982",
+      "chunk_9_1995",
+      "chunk_8_1310"
+    ],
+    "sigA": []
+  }
+]

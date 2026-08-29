@@ -19,6 +19,8 @@ services:
       SECRET_KEY: ${SECRET_KEY}
       SILICONFLOW_API_KEY: ${SILICONFLOW_API_KEY}
       ALEMBIC_AUTO_MIGRATE: "true"
-    
+    volumes:
+      - ./data:/app/data   # ChromaDB 持久化到宿主，重建容器不丢向量库
+
 volumes: 
   pgdata:

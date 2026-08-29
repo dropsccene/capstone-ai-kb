@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "keywords": [
+      "Interactive Mode",
+      "exit"
+    ],
+    "suggested": [
+      "chunk_9_2019",
+      "chunk_9_1985",
+      "chunk_9_1981"
+    ],
+    "sig": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 6,
+    "keywords": [
+      "looping through",
+      "items()"
+    ],
+    "suggested": [
+      "chunk_8_311",
+      "chunk_8_310",
+      "chunk_9_1557"
+    ],
+    "sig": [
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "id": 12,
+    "keywords": [
+      "List Comprehensions"
+    ],
+    "suggested": [
+      "chunk_8_686",
+      "chunk_8_685",
+      "chunk_8_300"
+    ],
+    "sig": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 23,
+    "keywords": [
+      "multiple exceptions",
+      "parenthesized"
+    ],
+    "suggested": [
+      "chunk_8_501",
+      "chunk_9_2002",
+      "chunk_9_1384"
+    ],
+    "sig": [
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "id": 32,
+    "keywords": [
+      "yield expression",
+      "generator expression"
+    ],
+    "suggested": [
+      "chunk_9_882",
+      "chunk_9_1980",
+      "chunk_9_1916"
+    ],
+    "sig": [
+      2,
+      1,
+      1
+    ]
+  }
+]
