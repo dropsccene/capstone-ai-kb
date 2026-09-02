@@ -20,7 +20,7 @@ new_norm = [norm(d) for d in new_docs]
 
 answers = json.load(open('evaluation/gt_answer_texts.json'))
 
-gt = {"description": f"Ground truth for Recall@K - {len(answers)} test cases (Python 3.14 docs, 600-char chunks, 2026-08-28)",
+gt = {"description": f"Ground truth for Recall@K - {len(answers)} test cases (Python 3.14 docs, 300/30 chunks, 2026-08-28)",
       "test_cases": []}
 
 miss_total = 0

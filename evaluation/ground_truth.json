@@ -1,5 +1,5 @@
 {
-  "description": "Ground truth for Recall@K - 42 test cases (Python 3.14 docs, 600-char chunks, 2026-08-28)",
+  "description": "Ground truth for Recall@K - 42 test cases (Python 3.14 docs, 300/30 chunks, re-aligned 2026-08-31)",
   "test_cases": [
     {
       "id": 2,

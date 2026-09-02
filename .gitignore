@@ -10,3 +10,4 @@ chroma_db/
 # Locust 压测产物（可再生，跑一次 locust 就有）
 rag_*.csv
 rag_*.html
+evaluation_backup_*/
