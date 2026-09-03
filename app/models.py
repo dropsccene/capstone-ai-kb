@@ -32,3 +32,13 @@ class User(Base):
     email = Column(String(255),unique = True,nullable = False)
     hashed_password = Column(String(255),nullable = False)
     created_at = Column(DateTime,server_default=func.now())
+
+class QueryLog(Base):
+    __tablename__ = "query_logs"
+    id = Column(Integer,primary_key = True,autoincrement = True)
+    kb_id = Column(Integer,ForeignKey("knowledge_bases.id"),nullable = False)
+    question = Column(Text,nullable = False)
+    top_k = Column(Integer,nullable = False)
+    chunk_ids = Column(Text,nullable = False)
+    latency_ms = Column(Integer,nullable = False)
+    created_at = Column(DateTime,server_default=func.now())
