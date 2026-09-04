@@ -13,3 +13,4 @@ async def rag_search(query:str,top_k:int=3):
     return await VectorStore("kb_1").hybrid_query(query, top_k)
 
 server.run()
+
